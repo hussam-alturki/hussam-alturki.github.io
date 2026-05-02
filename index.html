@@ -12,10 +12,48 @@
   <meta property="og:image" content="https://huss4am7.github.io/img/hussam-formal.jpeg">
   <meta property="og:url" content="https://huss4am7.github.io/">
   <meta property="og:type" content="profile">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:locale:alternate" content="ar_AR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hussam Alturki — Support Systems · Clear Communication">
+  <meta name="twitter:description" content="Multilingual support specialist (AR/DE/EN) based in Augsburg. Open to remote roles.">
+  <meta name="twitter:image" content="https://huss4am7.github.io/img/hussam-formal.jpeg">
+
+  <link rel="canonical" href="https://huss4am7.github.io/">
+  <link rel="alternate" hreflang="en" href="https://huss4am7.github.io/">
+  <link rel="alternate" hreflang="de" href="https://huss4am7.github.io/">
+  <link rel="alternate" hreflang="ar" href="https://huss4am7.github.io/">
+  <link rel="alternate" hreflang="x-default" href="https://huss4am7.github.io/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Hussam Alturki",
+    "jobTitle": "Multilingual Support Specialist",
+    "description": "Support specialist (AR/DE/EN) — CRM, structured documentation, remote-ready.",
+    "url": "https://huss4am7.github.io/",
+    "image": "https://huss4am7.github.io/img/hussam-formal.jpeg",
+    "email": "mailto:huss4am@gmail.com",
+    "telephone": "+4917621256819",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Augsburg",
+      "addressCountry": "DE"
+    },
+    "knowsLanguage": ["ar", "de", "en"],
+    "sameAs": [
+      "https://linkedin.com/in/hussam-alturki",
+      "https://github.com/huss4am7"
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700&family=Playfair+Display:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=Playfair+Display:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -42,13 +80,13 @@
 
       <div class="nav-controls">
         <div class="lang-switcher" role="group" aria-label="Language switcher">
-          <button data-lang="en" aria-label="English">EN</button>
-          <button data-lang="ar" aria-label="Arabic">AR</button>
-          <button data-lang="de" aria-label="German">DE</button>
+          <button data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+          <button data-lang="ar" aria-label="Arabic" aria-pressed="false">AR</button>
+          <button data-lang="de" aria-label="German" aria-pressed="false">DE</button>
         </div>
-        <button class="theme-toggle" aria-label="Toggle dark mode">
-          <span class="theme-icon-light">☀</span>
-          <span class="theme-icon-dark">☾</span>
+        <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon-light" aria-hidden="true">☀</span>
+          <span class="theme-icon-dark" aria-hidden="true">☾</span>
         </button>
       </div>
     </div>
@@ -59,11 +97,10 @@
     <section id="hero" class="hero">
       <div class="container">
         <div class="hero-content">
-          <!-- Mobile: top row = photo + name side by side -->
           <div class="hero-top">
             <div class="hero-visual">
               <div class="hero-img-frame">
-                <img src="img/hussam-formal.jpeg" alt="Hussam Alturki" class="hero-img" loading="eager">
+                <img src="img/hussam-formal.jpeg" alt="Hussam Alturki" class="hero-img" width="300" height="300" loading="eager" fetchpriority="high" decoding="async">
               </div>
             </div>
             <div class="hero-identity">
@@ -71,7 +108,6 @@
               <h1 data-i18n="hero.name">Hussam Alturki</h1>
             </div>
           </div>
-          <!-- Mobile: body = tagline + subtext + buttons -->
           <div class="hero-body">
             <p class="hero-tagline" data-i18n="hero.tagline">Support Systems · Clear Communication · Structured Thinking</p>
             <p class="hero-subtext" data-i18n="hero.subtext">I turn complex user problems into documented, scalable solutions — across three languages, in real-time.</p>
@@ -94,7 +130,7 @@
         </div>
         <div class="about-grid">
           <div class="about-visual">
-            <img src="img/hussam-casual.jpeg" alt="Hussam Alturki" class="about-img" loading="lazy">
+            <img src="img/hussam-casual.jpeg" alt="Hussam Alturki" class="about-img" width="600" height="600" loading="lazy" decoding="async">
           </div>
           <div class="about-content">
             <div data-i18n-html="about.content"></div>
@@ -225,9 +261,9 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-  <script src="data/translations.js"></script>
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script defer src="data/translations.js"></script>
+  <script defer src="js/i18n.js"></script>
+  <script defer src="js/main.js"></script>
 </body>
 </html>
