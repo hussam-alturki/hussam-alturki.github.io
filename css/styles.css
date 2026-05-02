@@ -354,7 +354,7 @@ a:hover { color: var(--accent-hover); }
 [dir="rtl"] .nav-container { flex-direction: row-reverse; }
 
 /* Section header */
-[dir="rtl"] .section-header { flex-direction: row-reverse; }
+[dir="rtl"] .section-header { justify-content: flex-end; }
 
 /* Timeline */
 [dir="rtl"] .timeline-item { padding-left: 0; padding-right: 1.75rem; border-left: none; border-right: 1.5px solid var(--border-soft); text-align: right; }
