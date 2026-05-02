@@ -9,6 +9,14 @@ function initTheme() {
   } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     html.setAttribute('data-theme', 'dark');
   }
+  syncThemeToggle();
+}
+
+function syncThemeToggle() {
+  if (!themeToggle) return;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+  themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
 }
 
 function toggleTheme() {
@@ -16,6 +24,7 @@ function toggleTheme() {
   const next = current === 'light' ? 'dark' : 'light';
   html.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
+  syncThemeToggle();
   generateQR();
 }
 
