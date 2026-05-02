@@ -1,0 +1,280 @@
+const translations = {
+  en: {
+    nav: {
+      about: "About", experience: "Experience", services: "Services",
+      skills: "Skills", projects: "Case Studies", contact: "Contact"
+    },
+    hero: {
+      name: "Hussam Alturki",
+      tagline: "Support Systems · Clear Communication · Structured Thinking",
+      subtext: "I turn complex user problems into documented, scalable solutions — across three languages, in real-time.",
+      ctaPrimary: "View Case Studies", ctaSecondary: "Get in Touch", downloadCv: "Download CV"
+    },
+    about: {
+      title: "About",
+      content: `<p>I'm a multilingual support specialist based in Augsburg, Germany, currently working at Concentrix on Meta Platforms (Tier-1, chat/email/outbound). My work involves handling complex user escalations, maintaining case documentation in CRM systems, and applying consistent quality standards under pressure.</p>
+      <p>My background spans customer-facing roles across support, field sales (Vodafone), hospitality (Select Hotel Augsburg), and independent IT support. The thread across all of it: identifying what's actually broken, not just what the user reports — and communicating the fix clearly.</p>
+      <p>I'm currently completing my secondary education at Bayernkolleg Augsburg while actively building toward a transition into remote tech-adjacent roles — specifically support operations, technical writing, or AI-assisted workflows.</p>`
+    },
+    experience: {
+      title: "Experience",
+      items: [
+        { period: "09.2023 – Present", role: "Customer Support Specialist", company: "Concentrix · Meta Platforms", points: "Tier-1 support via chat/email/outbound. Complex case handling. Daily CRM & ticketing work. Structured case documentation." },
+        { period: "03.2023 – 08.2023", role: "Field Sales Partner", company: "Vodafone", points: "Direct customer consultation. Needs analysis. Complaint resolution. Contract closing." },
+        { period: "10.2022 – 03.2023", role: "Receptionist", company: "Select Hotel Augsburg", points: "Guest handling in DE/EN/AR. Booking systems. Cross-department coordination." },
+        { period: "08.2021 – 06.2023", role: "IT Support (Freelance)", company: "Self-employed", points: "Hardware/software support. Device rollouts. Independent client management." },
+        { period: "02.2020 – 09.2022", role: "Event Manager", company: "Xclusive Events", points: "Full event coordination from briefing to wrap-up. On-site team leadership." }
+      ]
+    },
+    services: {
+      title: "Services", tabA: "For the Arab Community", tabB: "For Businesses", locationNote: "In person · Augsburg area",
+      community: [
+        { title: "Job Search Assistance", content: "Identifying realistic job opportunities based on your actual skills and German level — no false promises, just a clear-eyed match between what you offer and what the market needs." },
+        { title: "Job Market Preparation", content: "CV in German, Anschreiben (cover letter), interview coaching, and understanding what German employers actually expect — including unwritten norms." },
+        { title: "Housing Search Support", content: "Navigating the German rental market — Schufa, Mietvertrag, Selbstauskunft, and how to present yourself convincingly as a tenant." },
+        { title: "Language Support (German & English)", content: "Not a formal tutor — a real speaker who explains why the language works the way it does, helps you practice real situations, and reviews your texts before you send them." },
+        { title: "Document Preparation & Bureaucracy", content: "Filling out forms (Jobcenter, Ausländerbehörde, insurance, bank), organizing document files, translating official letters, and accompanying you to appointments as an interpreter." },
+        { title: "Translation & Interpretation", content: "Written translation (Arabic ↔ German ↔ English) for personal documents and official letters. Verbal interpretation for appointments in person or by phone." },
+        { title: "Understanding German Workplace Culture", content: "What nobody tells you before your first German job — hierarchy, directness, punctuality norms, and how to handle conflict professionally without damaging the relationship." },
+        { title: "Computer Literacy for Seniors", content: "Patient, jargon-free computer training for older adults — from basics (email, video calls, smartphones) to safe internet use, recognizing online scams, protecting personal data, and understanding what information your devices are collecting about you." }
+      ],
+      business: [
+        { title: "Deep Research & Decision Support", content: "Structured research to evaluate a business idea, market, or strategic decision. You get a readable brief with key findings and options — not a pile of links." },
+        { title: "Paid Advertising Planning", content: "Ad plans for Meta, Google, TikTok, and LinkedIn — targeting strategy, budget allocation, audience definition, and copy in Arabic, German, or English. Built on real platform knowledge from daily professional exposure." },
+        { title: "Project Consulting (Pre-launch & During)", content: "Thinking through your project before it launches — what assumptions need testing, what risks need addressing. During the project: a structured outside perspective to catch drift from the original goal." },
+        { title: "Customer Service Operations", content: "Setting up or taking over your customer communication — chat, email, social DMs. I write response templates, build handling guides, and structure a first-line support workflow in AR/DE/EN." },
+        { title: "Multilingual Content & Web Pages", content: "Content-rich web pages in Arabic, German, and English — including creative formats like interactive games, quizzes, or learning tools. I handle both the writing and the basic frontend build." },
+        { title: "Social Media Content Strategy", content: "A consistent content rhythm for LinkedIn, Instagram, or Facebook — content calendar, post structure, tone guidelines, and sample posts. Focused on Arabic-speaking and DACH audiences." },
+        { title: "Process Documentation & SOPs", content: "Turning how your team works into written, repeatable processes — maps, guides, checklists, decision trees. If your operation relies on people remembering things instead of documents, this fixes that." },
+        { title: "Competitor & Market Analysis (MENA × DACH)", content: "Research for businesses at the intersection of Arabic-speaking markets and the German/European context — what your competitors offer, how they communicate, and where the gaps are." },
+        { title: "AI-Assisted Research & Workflow Design", content: "Using AI tools effectively to compress research time and build repeatable workflows — then handing you a process your team can run independently." }
+      ]
+    },
+    skills: {
+      title: "Skills",
+      categories: {
+        communication: { label: "Communication", items: ["Arabic (Native)", "German C1 – TELC certified", "English – Professional fluency"] },
+        tools: { label: "Tools & Systems", items: ["CRM & Ticketing systems (daily use)", "Case management & documentation", "MS Office (including structured reporting)", "Booking management systems (hotel context)"] },
+        methods: { label: "Methods", items: ["De-escalation & complaint management", "Needs analysis & structured problem breakdown", "Pattern recognition in recurring issues", "Cross-functional coordination (support ↔ QA ↔ ops)"] },
+        progress: { label: "In Progress", items: ["HTML/CSS/JavaScript (building projects)", "Python basics (documented on LinkedIn)", "AI workflow integration (active exploration)", "PowerShell/CMD (exploratory)"] }
+      }
+    },
+    projects: {
+      title: "Case Studies",
+      disclaimer: "Based on real support workflows — examples reflect how I approach problems, not shipped production work.",
+      problemLabel: "Problem", actionLabel: "Action", resultLabel: "Result", viewLive: "View Live Project →",
+      items: [
+        { label: "Educational Game (Live)", title: "Escape from Berlin", url: "https://huss4am7.github.io/escape-from-berlin/",
+          problem: "Arabic-speaking learners of German lack engaging, context-relevant practice tools. Standard apps don't simulate real German bureaucratic and daily-life scenarios.",
+          action: "Built a multilingual browser game in HTML/CSS/JS with three progressive difficulty levels, multiple game modes, and a competitive multi-team format. Deployed on GitHub Pages. Implemented RTL/LTR layout switching, self-contained download functionality, and responsive design.",
+          result: "A functional, shareable educational tool demonstrating cross-domain skills: language pedagogy, frontend development, UX thinking, and deployment workflow." },
+        { label: "Escalation Pattern Analysis", title: "Support Escalation Pattern Analysis",
+          problem: "In high-volume support environments, the same root causes generate dozens of different-looking tickets. Without pattern recognition, teams respond reactively instead of systematically.",
+          action: "Mapped recurring escalation categories from daily case handling. Identified top 5 issue clusters. Drafted a documentation template that front-line agents could use to classify and route cases more accurately.",
+          result: "Clearer case routing logic. Reduced time spent re-explaining known issues. Template format adopted informally by team members. (Simulated case study based on real support patterns.)" },
+        { label: "Internal FAQ Restructure", title: "Multilingual Internal FAQ Restructure",
+          problem: "Existing internal knowledge base articles were inconsistently structured, mixed languages mid-document, and required agents to cross-reference multiple sources to answer a single query type.",
+          action: "Audited 12 existing articles. Rebuilt 4 as clean, single-purpose documents using a consistent template: Trigger → Context → Resolution Steps → Escalation Path. Translated key articles into Arabic for use with Arabic-speaking team members.",
+          result: "Agent lookup time reduced. Fewer escalations for issues covered in restructured docs. Consistent format made future updates faster. (Simulated case study based on real documentation workflows.)" }
+      ]
+    },
+    contact: {
+      title: "Contact",
+      openToWork: "Open to remote-first roles in support operations, technical writing, or AI-assisted workflows. Currently based in Augsburg, Germany.",
+      downloadCv: "Download CV"
+    },
+    qr: { title: "Scan to view my profile", note: "For business cards" },
+    print: {
+      name: "Hussam Alturki", title: "Support Specialist · Multilingual · Remote-Ready",
+      email: "huss4am@gmail.com", phone: "+49 176 21256819", linkedin: "linkedin.com/in/hussam-alturki",
+      backLanguages: "Languages: AR · DE · EN", backLocation: "Location: Augsburg, DE", backGithub: "GitHub: github.com/huss4am7"
+    },
+    footer: { text: "© 2026 Hussam Alturki · Built with HTML/CSS/JS · Hosted on GitHub Pages" }
+  },
+
+  ar: {
+    nav: {
+      about: "نبذة", experience: "الخبرة المهنية", services: "الخدمات",
+      skills: "المهارات", projects: "الأعمال", contact: "تواصل"
+    },
+    hero: {
+      name: "حسام التركي",
+      tagline: "أنظمة دعم · تواصل واضح · تفكير منظم",
+      subtext: "أحوّل مشكلات المستخدمين المعقدة إلى حلول موثقة وقابلة للتطوير — بثلاث لغات، في الوقت الفعلي.",
+      ctaPrimary: "استعرض الأعمال", ctaSecondary: "تواصل معي", downloadCv: "تحميل السيرة الذاتية"
+    },
+    about: {
+      title: "نبذة عني",
+      content: `<p>أنا متخصص دعم متعدد اللغات مقيم في أوغسبورغ، ألمانيا. أعمل حالياً في Concentrix لصالح Meta Platforms (مستوى أول — دردشة، بريد إلكتروني، مكالمات صادرة). عملي يشمل معالجة التصعيدات المعقدة، توثيق الحالات في أنظمة CRM، وتطبيق معايير الجودة تحت الضغط.</p>
+      <p>خلفيتي تمتد عبر أدوار متعددة: دعم العملاء، مبيعات ميدانية (Vodafone)، استقبال فندقي (Select Hotel Augsburg)، ودعم تقني مستقل. القاسم المشترك في كل ذلك: تحديد المشكلة الحقيقية وليس فقط ما يُبلَّغ عنه — ثم توصيل الحل بوضوح.</p>
+      <p>أكمل حالياً تعليمي الثانوي في Bayernkolleg Augsburg، مع توجه نشط نحو الأدوار التقنية عن بعد — تحديداً عمليات الدعم، الكتابة التقنية، أو سير العمل المدعومة بالذكاء الاصطناعي.</p>`
+    },
+    experience: {
+      title: "الخبرة المهنية",
+      items: [
+        { period: "09.2023 – الآن", role: "أخصائي دعم العملاء", company: "Concentrix · Meta Platforms", points: "دعم المستوى الأول عبر الدردشة والبريد الإلكتروني والمكالمات الصادرة. معالجة الحالات المعقدة. العمل اليومي على أنظمة CRM والتذاكر. توثيق منظم للحالات." },
+        { period: "03.2023 – 08.2023", role: "شريك مبيعات ميدانية", company: "Vodafone", points: "استشارات مباشرة للعملاء. تحليل الاحتياجات. حل الشكاوى. إتمام العقود." },
+        { period: "10.2022 – 03.2023", role: "موظف استقبال", company: "Select Hotel Augsburg", points: "التعامل مع النزلاء بالألمانية والإنجليزية والعربية. أنظمة الحجز. التنسيق بين الأقسام." },
+        { period: "08.2021 – 06.2023", role: "دعم تقني (مستقل)", company: "عمل حر", points: "دعم الأجهزة والبرامج. توزيع الأجهزة. إدارة مستقلة للعملاء." },
+        { period: "02.2020 – 09.2022", role: "منظم فعاليات", company: "Xclusive Events", points: "التنسيق الكامل للفعاليات من التخطيط إلى التنفيذ. قيادة الفريق في الموقع." }
+      ]
+    },
+    services: {
+      title: "الخدمات", tabA: "للمجتمع العربي", tabB: "لأصحاب المشاريع", locationNote: "حضورياً · منطقة أوغسبورغ",
+      community: [
+        { title: "مساعدة في إيجاد عمل", content: "تحديد فرص العمل المناسبة لمستواك الفعلي ومهاراتك ولغتك — بدون وعود فارغة، فقط تطابق واقعي بين ما تقدمه وما يحتاجه السوق." },
+        { title: "التهيئة لسوق العمل", content: "السيرة الذاتية بالألمانية، خطاب التقديم (Anschreiben)، تدريب على المقابلات، وشرح ما يتوقعه أصحاب العمل الألمان فعلاً — بما في ذلك الأعراف غير المكتوبة." },
+        { title: "مساعدة في البحث عن سكن", content: "التنقل في سوق الإيجار الألماني — فهم Schufa وعقد الإيجار والتقديم الذاتي، وكيف تقدم نفسك بشكل مقنع كمستأجر." },
+        { title: "دعم تعلم الألمانية والإنجليزية", content: "لست مدرساً رسمياً — متحدث حقيقي يشرح سبب عمل اللغة بهذه الطريقة، يساعدك على التدرب على مواقف حقيقية، ويراجع نصوصك قبل إرسالها." },
+        { title: "تنظيم الأوراق والتعامل مع الجهات الرسمية", content: "تعبئة الاستمارات (Jobcenter، Ausländerbehörde، تأمين، بنك)، تنظيم الملفات، ترجمة الرسائل الرسمية، والمرافقة إلى المواعيد كمترجم." },
+        { title: "الترجمة والتفسير", content: "ترجمة مكتوبة (عربي ↔ ألماني ↔ إنجليزي) للوثائق الشخصية والرسائل الرسمية. ترجمة شفهية للمواعيد حضورياً أو هاتفياً." },
+        { title: "فهم ثقافة بيئة العمل الألمانية", content: "ما لا يخبرك به أحد قبل وظيفتك الألمانية الأولى — التسلسل الهرمي، المباشرة، توقعات الالتزام بالمواعيد، وكيف تتعامل مع النزاعات باحترافية دون الإضرار بالعلاقة." },
+        { title: "تعليم الحاسوب لكبار السن", content: "تدريب هادئ وبسيط على الحاسوب لكبار السن — من الأساسيات (البريد الإلكتروني، مكالمات الفيديو، الهاتف الذكي) إلى الاستخدام الآمن للإنترنت، التعرف على عمليات الاحتيال الإلكتروني، حماية البيانات الشخصية، وفهم ما تجمعه الأجهزة عنك." }
+      ],
+      business: [
+        { title: "بحث معمق ودعم القرار", content: "بحث منظم لتقييم فكرة أو سوق أو قرار استراتيجي. تحصل على ملخص قابل للقراءة بالنتائج الرئيسية وخيارات التوصية — لا مجرد روابط." },
+        { title: "تخطيط الإعلانات المدفوعة", content: "خطط إعلانية لـ Meta وGoogle وTikTok وLinkedIn — استراتيجية استهداف، توزيع ميزانية، تحديد جمهور، ونصوص إعلانية بالعربية أو الألمانية أو الإنجليزية. مبني على معرفة حقيقية بالمنصات." },
+        { title: "استشارات المشاريع", content: "التفكير في مشروعك قبل إطلاقه — ما الافتراضات التي تحتاج اختباراً، وما المخاطر التي تحتاج معالجة. أثناء المشروع: منظور خارجي منظم لرصد الانحراف عن الهدف الأصلي." },
+        { title: "إدارة عمليات خدمة العملاء", content: "إنشاء أو استلام تواصل عملائك — دردشة، بريد إلكتروني، رسائل مباشرة. أكتب قوالب الردود وأبني أدلة المعالجة وأهيكل سير عمل الدعم بالعربية والألمانية والإنجليزية." },
+        { title: "محتوى متعدد اللغات وصفحات ويب", content: "صفحات ويب غنية بالمحتوى بالعربية والألمانية والإنجليزية — بما في ذلك التنسيقات الإبداعية كالألعاب التفاعلية والاختبارات. أتولى النص والبناء الأمامي الأساسي." },
+        { title: "استراتيجية محتوى وسائل التواصل", content: "إيقاع محتوى منتظم لـ LinkedIn أو Instagram أو Facebook — تقويم محتوى، هيكل منشورات، إرشادات أسلوب، ومنشورات نموذجية. تركيز على الجمهور العربي وأسواق DACH." },
+        { title: "توثيق العمليات والإجراءات", content: "تحويل طريقة عمل فريقك إلى عمليات مكتوبة وقابلة للتكرار — خرائط وأدلة وقوائم تحقق وأشجار قرار. إذا كانت عمليتك تعتمد على ذاكرة الناس، هذا يحل المشكلة." },
+        { title: "تحليل السوق والمنافسين", content: "بحث للأعمال التي تعمل عند تقاطع الأسواق الناطقة بالعربية والسياق الأوروبي — ما يقدمه المنافسون، كيف يتواصلون، وأين الفجوات." },
+        { title: "البحث بمساعدة الذكاء الاصطناعي", content: "استخدام أدوات الذكاء الاصطناعي لتقليص وقت البحث وبناء سير عمل قابلة للتكرار — ثم تسليمك عملية يستطيع فريقك تشغيلها باستقلالية." }
+      ]
+    },
+    skills: {
+      title: "المهارات",
+      categories: {
+        communication: { label: "التواصل", items: ["العربية (لغة أم)", "الألمانية C1", "الإنجليزية – مستوى احترافي"] },
+        tools: { label: "الأدوات والأنظمة", items: ["CRM & Ticketing systems (daily use)", "Case management & documentation", "MS Office (including structured reporting)", "Booking management systems (hotel context)"] },
+        methods: { label: "المنهجيات", items: ["De-escalation & complaint management", "Needs analysis & structured problem breakdown", "Pattern recognition in recurring issues", "Cross-functional coordination (support ↔ QA ↔ ops)"] },
+        progress: { label: "قيد التطوير", items: ["HTML/CSS/JavaScript (building projects)", "Python basics (documented on LinkedIn)", "AI workflow integration (active exploration)", "PowerShell/CMD (exploratory)"] }
+      }
+    },
+    projects: {
+      title: "الأعمال",
+      disclaimer: "مبنية على سير عمل دعم حقيقية — الأمثلة تعكس طريقة تفكيري في حل المشكلات، وليست منتجات نهائية.",
+      problemLabel: "المشكلة", actionLabel: "الإجراء", resultLabel: "النتيجة", viewLive: "عرض المشروع المباشر →",
+      items: [
+        { label: "لعبة تعليمية (مباشرة)", title: "الهروب من برلين", url: "https://huss4am7.github.io/escape-from-berlin/",
+          problem: "يتعلم الناطقون بالعربية الألمانية ويفتقرون إلى أدوات تدريب جذابة وذات سياق ملائم. التطبيقات القياسية لا تحاكي السيناريوهات البيروقراطية واليومية الحقيقية في ألمانيا.",
+          action: "بنيت لعبة متصفح متعددة اللغات باستخدام HTML/CSS/JS مع ثلاث مستويات صعوبة تصاعدية، وأوضاع لعب متعددة، وتنسيق فِرق تنافسي. تم النشر على GitHub Pages. تم تنفيذ التبديل بين تخطيط RTL/LTR، وظيفة التنزيل المستقل، وتصميم متجاوب.",
+          result: "أداة تعليمية عملية قابلة للمشاركة تُظهر مهارات متعددة المجالات: علم اللغة التطبيقي، تطوير الواجهات الأمامية، التفكير في تجربة المستخدم، وسير عمل النشر." },
+        { label: "تحليل أنماط التصعيد", title: "تحليل أنماط التصعيد",
+          problem: "في بيئات الدعم ذات الحجم الكبير، تولد نفس الأسباب الجذرية العشرات من التذاكر ذات المظاهر المختلفة. بدون التعرف على الأنماط، تستجيب الفرق بشكل تفاعلي بدلاً من منهجي.",
+          action: "تم رسم فئات التصعيد المتكررة من معالجة الحالات اليومية. تم تحديد أهم 5 مجموعات مشاكل. تم صياغة قالب توثيق يمكن للوكلاء الأماميين استخدامه لتصنيف وتوجيه الحالات بدقة أكبر.",
+          result: "منطق أوضح لتوجيه الحالات. تقليل الوقت المستغرق في إعادة شرح المشكلات المعروفة. تم اعتماد تنسيق القالب بشكل غير رسمي من قبل أعضاء الفريق. (دراسة حالة محاكاة مبنية على أنماط دعم حقيقية.)" },
+        { label: "إعادة هيكلة قاعدة المعرفة الداخلية", title: "إعادة هيكلة الأسئلة الشائعة الداخلية متعددة اللغات",
+          problem: "كانت المقالات الداخلية الموجودة في قاعدة المعرفة غير متسقة الهيكل، تخلط بين اللغات في منتصف المستند، وتتطلب من الوكلاء الرجوع إلى مصادر متعددة للإجابة على نوع واحد من الاستفسارات.",
+          action: "تم مراجعة 12 مقالة موجودة. إعادة بناء 4 مقالات كمستندات نظيفة ذات هدف واحد باستخدام قالب متسق: المحفز → السياق → خطوات الحل → مسار التصعيد. تمت ترجمة المقالات الرئيسية إلى العربية للاستخدام مع أعضاء الفريق الناطقين بالعربية.",
+          result: "تقليل وقت البحث للوكلاء. تقليل التصعيدات للمشكلات المغطاة في المستندات المعاد هيكلتها. جعل التنسيق المتسق التحديثات المستقبلية أسرع. (دراسة حالة محاكاة مبنية على سير عمل توثيق حقيقية.)" }
+      ]
+    },
+    contact: {
+      title: "تواصل",
+      openToWork: "متاح للعمل عن بعد في مجالات عمليات الدعم، الكتابة التقنية، أو سير العمل المدعومة بالذكاء الاصطناعي. مقيم حالياً في أوغسبورغ، ألمانيا.",
+      downloadCv: "تحميل السيرة الذاتية"
+    },
+    qr: { title: "امسح للاطلاع على ملفي المهني", note: "للبطاقات المهنية" },
+    print: {
+      name: "حسام التركي", title: "أخصائي دعم · متعدد اللغات · جاهز للعمل عن بعد",
+      email: "huss4am@gmail.com", phone: "+49 176 21256819", linkedin: "linkedin.com/in/hussam-alturki",
+      backLanguages: "اللغات: AR · DE · EN", backLocation: "الموقع: أوغسبورغ، ألمانيا", backGithub: "GitHub: github.com/huss4am7"
+    },
+    footer: { text: "© 2026 حسام التركي · مبني باستخدام HTML/CSS/JS · مستضاف على GitHub Pages" }
+  },
+
+  de: {
+    nav: {
+      about: "Über mich", experience: "Berufserfahrung", services: "Dienstleistungen",
+      skills: "Fähigkeiten", projects: "Fallstudien", contact: "Kontakt"
+    },
+    hero: {
+      name: "Hussam Alturki",
+      tagline: "Support-Systeme · Klare Kommunikation · Strukturiertes Denken",
+      subtext: "Ich wandle komplexe Nutzerprobleme in dokumentierte, skalierbare Lösungen um — in drei Sprachen, in Echtzeit.",
+      ctaPrimary: "Fallstudien ansehen", ctaSecondary: "Kontakt aufnehmen", downloadCv: "Lebenslauf herunterladen"
+    },
+    about: {
+      title: "Über mich",
+      content: `<p>Ich bin ein mehrsprachiger Support-Spezialist aus Augsburg und arbeite derzeit bei Concentrix für Meta Platforms (Tier-1, Chat/E-Mail/Outbound). Meine Arbeit umfasst die Bearbeitung komplexer Nutzereskalationen, strukturierte Falldokumentation in CRM-Systemen und die Einhaltung von Qualitätsstandards unter Druck.</p>
+      <p>Mein Hintergrund umfasst verschiedene Kundenkontaktrollen: Support, Außendienst (Vodafone), Hotellerie (Select Hotel Augsburg) und selbstständiger IT-Support. Der rote Faden: erkennen, was wirklich nicht funktioniert — nicht nur, was der Nutzer meldet — und die Lösung klar kommunizieren.</p>
+      <p>Ich absolviere derzeit die Mittlere Reife am Bayernkolleg Augsburg und arbeite aktiv auf einen Wechsel in remote-fähige Tech-Rollen hin — konkret: Support Operations, Technical Writing oder KI-gestützte Workflows.</p>`
+    },
+    experience: {
+      title: "Berufserfahrung",
+      items: [
+        { period: "09.2023 – Aktuell", role: "Customer Support Specialist", company: "Concentrix · Meta Platforms", points: "Tier-1-Support via Chat/E-Mail/Outbound. Komplexe Fallbearbeitung. Tägliche CRM- & Ticketing-Arbeit. Strukturierte Falldokumentation." },
+        { period: "03.2023 – 08.2023", role: "Field Sales Partner", company: "Vodafone", points: "Direkte Kundenberatung. Bedarfsanalyse. Beschwerdemanagement. Vertragsabschluss." },
+        { period: "10.2022 – 03.2023", role: "Rezeptionist", company: "Select Hotel Augsburg", points: "Gästebetreuung auf DE/EN/AR. Buchungssysteme. Abteilungsübergreifende Koordination." },
+        { period: "08.2021 – 06.2023", role: "IT-Support (Freelance)", company: "Selbstständig", points: "Hardware-/Software-Support. Geräte-Rollouts. Eigenständiges Kundenmanagement." },
+        { period: "02.2020 – 09.2022", role: "Event Manager", company: "Xclusive Events", points: "Komplette Eventkoordination vom Briefing bis zum Wrap-up. Vor-Ort-Teamleitung." }
+      ]
+    },
+    services: {
+      title: "Dienstleistungen", tabA: "Für die arabische Community", tabB: "Für Unternehmen", locationNote: "Vor Ort · Raum Augsburg",
+      community: [
+        { title: "Stellensuche-Hilfe", content: "Realistische Stellenangebote passend zu Ihren Fähigkeiten und Deutschkenntnissen finden." },
+        { title: "Bewerbungsvorbereitung", content: "Lebenslauf, Anschreiben, Bewerbungscoaching und Erklärung der deutschen Arbeitgebererwartungen." },
+        { title: "Wohnungssuche-Unterstützung", content: "Schufa, Mietvertrag, Selbstauskunft und überzeugende Selbstpräsentation als Mieter." },
+        { title: "Sprachunterstützung (Deutsch & Englisch)", content: "Kein formeller Unterricht — echte Erklärungen, Situationsübungen und Textprüfung vor dem Absenden." },
+        { title: "Behördengänge & Dokumente", content: "Formulare ausfüllen, Unterlagen organisieren, Bescheide übersetzen, Dolmetschen bei Terminen." },
+        { title: "Übersetzung & Dolmetschen", content: "Schriftliche Übersetzung und Dolmetschen bei persönlichen oder telefonischen Terminen." },
+        { title: "Deutsche Arbeitskultur verstehen", content: "Was niemand vor dem ersten deutschen Job erklärt — Hierarchie, Direktheit, Pünktlichkeit, Konfliktkommunikation." },
+        { title: "Computertraining für Senioren", content: "Geduldiges, verständliches Computertraining für Senioren — von Grundlagen (E-Mail, Videoanrufe, Smartphone) bis zu sicherem Internetumgang, Erkennen von Betrugsmaschen und Datenschutz." }
+      ],
+      business: [
+        { title: "Recherche & Entscheidungsunterstützung", content: "Strukturierte Recherche zur Bewertung von Ideen, Märkten oder strategischen Entscheidungen. Ergebnis: lesbares Briefing mit Kernbefunden und Handlungsoptionen." },
+        { title: "Werbeplanung", content: "Werbeplanung für Meta, Google, TikTok und LinkedIn — Targeting, Budgetverteilung, Zielgruppe und Anzeigentexte auf AR/DE/EN." },
+        { title: "Projektberatung", content: "Strukturierte Beratung vor dem Launch und während des Projekts — Annahmen testen, Risiken adressieren, externe Perspektive." },
+        { title: "Kundenservice-Operations", content: "Aufbau oder Übernahme der Kundenkommunikation — Chat, E-Mail, DMs. Antwortvorlagen, Leitfäden, First-Line-Support-Workflows auf AR/DE/EN." },
+        { title: "Mehrsprachige Webinhalte", content: "Inhaltsreiche Webseiten auf AR/DE/EN — inklusive kreativer Formate (Spiele, Quiz, Lerntools). Text und einfaches Frontend." },
+        { title: "Social-Media-Strategie", content: "Konsistenter Content-Rhythmus für LinkedIn, Instagram oder Facebook — Redaktionsplan, Post-Struktur, Ton-Leitlinien und Musterbeiträge. Fokus auf arabischsprachige und DACH-Zielgruppen." },
+        { title: "Prozessdokumentation & SOPs", content: "Aus der Arbeitsweise Ihres Teams werden schriftliche, wiederholbare Prozesse — Ablaufpläne, Leitfäden, Checklisten, Entscheidungsbäume." },
+        { title: "Markt- & Wettbewerbsanalyse", content: "Recherche für Unternehmen an der Schnittstelle arabischsprachiger und DACH-Märkte — Wettbewerbsangebote, Kommunikation, Marktlücken." },
+        { title: "KI-gestützte Recherche & Workflows", content: "KI-Tools effektiv einsetzen für schnellere Recherche und wiederholbare Workflows — Ergebnis: ein Prozess, den Ihr Team selbstständig ausführt." }
+      ]
+    },
+    skills: {
+      title: "Fähigkeiten",
+      categories: {
+        communication: { label: "Kommunikation", items: ["Arabisch (Muttersprache)", "Deutsch C1 – TELC-zertifiziert", "Englisch – verhandlungssicher"] },
+        tools: { label: "Tools & Systeme", items: ["CRM & Ticketing systems (daily use)", "Case management & documentation", "MS Office (including structured reporting)", "Booking management systems (hotel context)"] },
+        methods: { label: "Methoden", items: ["De-escalation & complaint management", "Needs analysis & structured problem breakdown", "Pattern recognition in recurring issues", "Cross-functional coordination (support ↔ QA ↔ ops)"] },
+        progress: { label: "In Entwicklung", items: ["HTML/CSS/JavaScript (building projects)", "Python basics (documented on LinkedIn)", "AI workflow integration (active exploration)", "PowerShell/CMD (exploratory)"] }
+      }
+    },
+    projects: {
+      title: "Fallstudien",
+      disclaimer: "Basierend auf realen Support-Workflows — die Beispiele zeigen meine Herangehensweise, nicht ausgelieferte Produktivsysteme.",
+      problemLabel: "Problem", actionLabel: "Vorgehen", resultLabel: "Ergebnis", viewLive: "Live-Projekt ansehen →",
+      items: [
+        { label: "Lernspiel (Live)", title: "Escape from Berlin", url: "https://huss4am7.github.io/escape-from-berlin/",
+          problem: "Arabischsprachige Deutschlerner haben keine ansprechenden, kontextrelevanten Übungswerkzeuge. Standard-Apps simulieren keine realen deutschen bürokratischen und alltäglichen Szenarien.",
+          action: "Ein mehrsprachiges Browser-Spiel in HTML/CSS/JS mit drei progressiven Schwierigkeitsstufen, mehreren Spielmodi und einem kompetitiven Multi-Team-Format. Deployed auf GitHub Pages. Implementierung von RTL/LTR-Layout-Switching, eigenständiger Download-Funktionalität und responsivem Design.",
+          result: "Ein funktionales, teilbares Bildungswerkzeug, das domänenübergreifende Fähigkeiten demonstriert: Sprachdidaktik, Frontend-Entwicklung, UX-Denken und Deployment-Workflow." },
+        { label: "Analyse von Eskalationsmustern", title: "Analyse von Eskalationsmustern",
+          problem: "In High-Volume-Support-Umgebungen erzeugen dieselben Ursachen Dutzende unterschiedlich aussehender Tickets. Ohne Mustererkennung reagieren Teams reaktiv statt systematisch.",
+          action: "Wiederkehrende Eskalationskategorien aus der täglichen Fallbearbeitung kartiert. Top-5-Problembündel identifiziert. Dokumentationsvorlage entworfen, die Frontline-Agenten zur genaueren Klassifizierung und Weiterleitung von Fällen nutzen können.",
+          result: "Klarere Fall-Routing-Logik. Weniger Zeit für die Wiedererklärung bekannter Probleme. Vorlagenformat wurde informell von Teammitgliedern übernommen. (Simulierte Fallstudie basierend auf realen Support-Mustern.)" },
+        { label: "Umstrukturierung interner FAQ", title: "Umstrukturierung mehrsprachiger interner FAQ",
+          problem: "Bestehende interne Wissensdatenbank-Artikel waren inkonsistent strukturiert, mischten Sprachen mitten im Dokument und erforderten von Agenten, mehrere Quellen zu konsultieren, um einen einzelnen Anfragetyp zu beantworten.",
+          action: "12 bestehende Artikel auditiert. 4 als saubere, zweckgebundene Dokumente mit konsistentem Template neu aufgebaut: Auslöser → Kontext → Lösungsschritte → Eskalationspfad. Schlüsselartikel ins Arabische übersetzt für arabischsprachige Teammitglieder.",
+          result: "Reduzierte Nachschlagezeit für Agenten. Weniger Eskalationen für in restrukturierten Docs abgedeckte Issues. Konsistentes Format beschleunigte zukünftige Updates. (Simulierte Fallstudie basierend auf realen Dokumentations-Workflows.)" }
+      ]
+    },
+    contact: {
+      title: "Kontakt",
+      openToWork: "Offen für Remote-Stellen in Support Operations, Technical Writing oder KI-gestützten Workflows. Aktuell ansässig in Augsburg, Deutschland.",
+      downloadCv: "Lebenslauf herunterladen"
+    },
+    qr: { title: "Scannen zum Anzeigen meines Profils", note: "Für Visitenkarten" },
+    print: {
+      name: "Hussam Alturki", title: "Support-Spezialist · Mehrsprachig · Remote-Ready",
+      email: "huss4am@gmail.com", phone: "+49 176 21256819", linkedin: "linkedin.com/in/hussam-alturki",
+      backLanguages: "Sprachen: AR · DE · EN", backLocation: "Standort: Augsburg, DE", backGithub: "GitHub: github.com/huss4am7"
+    },
+    footer: { text: "© 2026 Hussam Alturki · Erstellt mit HTML/CSS/JS · Gehostet auf GitHub Pages" }
+  }
+};
