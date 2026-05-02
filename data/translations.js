@@ -84,11 +84,11 @@ const translations = {
       ]
     },
     contact: {
-      title: "Contact",
+      title: "Let's talk.",
       openToWork: "Open to remote-first roles in support operations, technical writing, or AI-assisted workflows. Currently based in Augsburg, Germany.",
       downloadCv: "Download CV"
     },
-    qr: { title: "Scan to view my profile", note: "For business cards" },
+    qr: { cardLabel: "Digital Business Card", title: "Scan to view my profile", role: "Support Specialist · AR · DE · EN", location: "Augsburg, DE" },
     print: {
       name: "Hussam Alturki", title: "Support Specialist · Multilingual · Remote-Ready",
       email: "huss4am@gmail.com", phone: "+49 176 21256819", linkedin: "linkedin.com/in/hussam-alturki",
@@ -181,11 +181,11 @@ const translations = {
       ]
     },
     contact: {
-      title: "تواصل",
+      title: "لنتحدث",
       openToWork: "متاح للعمل عن بعد في مجالات عمليات الدعم، الكتابة التقنية، أو سير العمل المدعومة بالذكاء الاصطناعي. مقيم حالياً في أوغسبورغ، ألمانيا.",
       downloadCv: "تحميل السيرة الذاتية"
     },
-    qr: { title: "امسح للاطلاع على ملفي المهني", note: "للبطاقات المهنية" },
+    qr: { cardLabel: "بطاقة أعمال رقمية", title: "امسح للاطلاع على ملفي المهني", role: "أخصائي دعم · AR · DE · EN", location: "أوغسبورغ، ألمانيا" },
     print: {
       name: "حسام التركي", title: "أخصائي دعم · متعدد اللغات · جاهز للعمل عن بعد",
       email: "huss4am@gmail.com", phone: "+49 176 21256819", linkedin: "linkedin.com/in/hussam-alturki",
@@ -279,11 +279,11 @@ const translations = {
       ]
     },
     contact: {
-      title: "Kontakt",
+      title: "Lass uns reden.",
       openToWork: "Offen für Remote-Stellen in Support Operations, Technical Writing oder KI-gestützten Workflows. Aktuell ansässig in Augsburg, Deutschland.",
       downloadCv: "Lebenslauf herunterladen"
     },
-    qr: { title: "Scannen zum Anzeigen meines Profils", note: "Für Visitenkarten" },
+    qr: { cardLabel: "Digitale Visitenkarte", title: "Scannen zum Anzeigen meines Profils", role: "Support-Spezialist · AR · DE · EN", location: "Augsburg, DE" },
     print: {
       name: "Hussam Alturki", title: "Support-Spezialist · Mehrsprachig · Remote-Ready",
       email: "huss4am@gmail.com", phone: "+49 176 21256819", linkedin: "linkedin.com/in/hussam-alturki",
