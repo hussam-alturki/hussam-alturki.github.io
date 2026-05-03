@@ -476,3 +476,265 @@ a:hover { color: var(--accent-hover); }
   [dir="rtl"] .footer-grid { flex-direction: row-reverse; }
 }
 .footer .footer-grid p { margin: 0; }
+/* ═══════════════════════════════════════════════════
+   BELIEFS SECTION
+   ═══════════════════════════════════════════════════ */
+.beliefs-grid {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 480px) {
+  .beliefs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 768px) {
+  .beliefs-grid { gap: 1.5rem; }
+}
+
+.belief-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.belief-card::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.12;
+  pointer-events: none;
+  user-select: none;
+}
+[dir="rtl"] .belief-card::before {
+  left: auto;
+  right: 1rem;
+}
+.belief-card:hover {
+  box-shadow: 0 8px 24px var(--shadow-soft);
+  transform: translateY(-2px);
+}
+.belief-statement {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+}
+.belief-detail {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+@media (min-width: 768px) {
+  .belief-card { padding: 2rem; }
+  .belief-statement { font-size: 1.1875rem; }
+  .belief-detail { font-size: 0.9375rem; }
+}
+[dir="rtl"] .belief-card { text-align: right; }
+
+/* ═══════════════════════════════════════════════════
+   EXPERIENCE — TIMELINE INSIGHT
+   ═══════════════════════════════════════════════════ */
+.timeline-insight {
+  display: inline-block;
+  margin-top: 0.625rem;
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--accent);
+  line-height: 1.5;
+}
+@media (min-width: 768px) {
+  .timeline-insight { font-size: 0.875rem; }
+}
+[dir="rtl"] .timeline-insight { display: block; text-align: right; }
+
+/* ═══════════════════════════════════════════════════
+   SUPERPOWERS / SERVICES
+   ═══════════════════════════════════════════════════ */
+.superpowers-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+@media (min-width: 768px) {
+  .superpowers-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.superpower-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.superpower-card:hover {
+  box-shadow: 0 8px 24px var(--shadow-soft);
+  transform: translateY(-2px);
+}
+.superpower-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.25;
+  line-height: 1;
+  margin-bottom: -0.25rem;
+}
+.superpower-title {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+.superpower-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+.superpower-example {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  background: var(--accent-soft);
+  border-left: 2px solid var(--accent);
+  padding: 0.625rem 0.875rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  line-height: 1.55;
+}
+[dir="rtl"] .superpower-example {
+  border-left: none;
+  border-right: 2px solid var(--accent);
+  border-radius: var(--radius) 0 0 var(--radius);
+  text-align: right;
+}
+@media (min-width: 768px) {
+  .superpower-card { padding: 2rem; }
+  .superpower-title { font-size: 1.125rem; }
+  .superpower-desc { font-size: 0.9375rem; }
+  .superpower-example { font-size: 0.875rem; }
+}
+[dir="rtl"] .superpower-card { text-align: right; }
+
+/* ═══════════════════════════════════════════════════
+   PROJECT CARDS — IMAGE SLOTS
+   ═══════════════════════════════════════════════════ */
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+  background: var(--accent-soft);
+  display: block;
+}
+/* Fallback placeholder when image is missing */
+.project-thumb-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+.project-thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.project-card:hover .project-thumb-wrap img {
+  transform: scale(1.03);
+}
+
+/* ═══════════════════════════════════════════════════
+   TESTIMONIALS
+   ═══════════════════════════════════════════════════ */
+.testimonials-grid {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 600px) {
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.testimonial-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+.testimonial-card::before {
+  content: '\201C';
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.2;
+  position: absolute;
+  top: 0.75rem;
+  left: 1.25rem;
+  pointer-events: none;
+  user-select: none;
+}
+[dir="rtl"] .testimonial-card::before {
+  content: '\201D';
+  left: auto;
+  right: 1.25rem;
+}
+.testimonial-quote {
+  font-size: 0.9375rem;
+  color: var(--text);
+  line-height: 1.7;
+  font-style: italic;
+  padding-top: 1.5rem;
+}
+.testimonial-meta {
+  margin-top: auto;
+}
+.testimonial-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.testimonial-role {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+@media (min-width: 768px) {
+  .testimonial-card { padding: 1.75rem; }
+  .testimonial-quote { font-size: 1rem; }
+}
+[dir="rtl"] .testimonial-card { text-align: right; }
+[dir="rtl"] .testimonial-quote { text-align: right; }
+
+/* ═══════════════════════════════════════════════════
+   PRINT — hide new sections
+   ═══════════════════════════════════════════════════ */
+@media print {
+  #beliefs, #testimonials, .superpowers-grid,
+  .belief-card, .testimonial-card, .superpower-card,
+  .project-thumb-wrap { display: none !important; }
+}
