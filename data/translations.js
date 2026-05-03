@@ -155,25 +155,13 @@ const translations = {
       ]
     },
     testimonials: {
-      title: "What people say",
-      items: [
-        {
-          quote: "Hussam finds solutions we overlooked. He sees the pattern behind the problem, not just the problem itself.",
-          name: "Colleague",
-          role: "Support Team · Concentrix"
-        },
-        {
-          quote: "He helped me navigate my first Jobcenter appointment and actually explained why each document was needed. Nobody had done that before.",
-          name: "Community member",
-          role: "Augsburg"
-        },
-        {
-          quote: "The template system he built changed how our whole team handles peak hours. Simple, obvious in hindsight — that's the point.",
-          name: "Team member",
-          role: "Support Operations"
-        }
-      ]
-    },
+  title: "What people say",
+  items: [
+    { quote: "Great nesting buddy and a very pleasant colleague who is happy to take the time to explain work processes to you. It's great to work with him.", name: "Viriya Kaov", role: "Colleague · Concentrix · 03/2025" },
+    { quote: "Ever since Hussam came into the team he always aimed for the top. His deep commitment to provide the best experience for our customers has quickly reflected in his performance stats. He truly is a shining star. It's always been a pleasure working with you.", name: "Christopher Kessel", role: "Colleague · Concentrix · 09/2024" },
+    { quote: "I am pleased to write this reference for my esteemed colleague, Hussam. Throughout our time at Concentrix, Hussam has consistently shown a deep commitment to addressing people's problems and always gives his best effort. He demonstrates remarkable empathy and genuinely cares about the well-being of others. He listens attentively and understands concerns before taking thoughtful action, which leads to well-informed and compassionate decisions.", name: "Sorina Marin", role: "Colleague · Concentrix · 07/2024" }
+  ]
+},
     contact: {
       title: "Let's talk.",
       openToWork: "Open to remote-first roles in support operations, technical writing, or AI-assisted workflows. Currently based in Augsburg, Germany.",
@@ -344,25 +332,13 @@ const translations = {
       ]
     },
     testimonials: {
-      title: "ماذا يقول الآخرون",
-      items: [
-        {
-          quote: "حسام يجد حلولاً نغفل عنها. يرى النمط خلف المشكلة، لا المشكلة وحدها.",
-          name: "زميل",
-          role: "فريق الدعم · Concentrix"
-        },
-        {
-          quote: "ساعدني في التنقل خلال أول موعد في Jobcenter وشرح لي فعلاً لماذا كل وثيقة مطلوبة. لم يفعل أحد ذلك من قبل.",
-          name: "فرد من المجتمع",
-          role: "أوغسبورغ"
-        },
-        {
-          quote: "نظام القوالب الذي بناه غيّر طريقة عمل فريقنا خلال ساعات الذروة. بسيط، واضح بأثر رجعي — هذه هي الفكرة.",
-          name: "عضو الفريق",
-          role: "عمليات الدعم"
-        }
-      ]
-    },
+  title: "ما يقوله الآخرون",
+  items: [
+    { quote: "زميل تدريب رائع وشخص لطيف جداً، يحرص دائماً على شرح سير العمل بصبر. العمل معه متعة حقيقية.", name: "Viriya Kaov", role: "زميل · Concentrix · 03/2025" },
+    { quote: "منذ انضمام حسام إلى الفريق، كان دائماً يسعى للقمة. التزامه العميق بتقديم أفضل تجربة لعملائنا انعكس سريعاً في مؤشرات أدائه. هو حقاً نجم لامع. كان من دواعي سروري دائماً العمل معه.", name: "Christopher Kessel", role: "زميل · Concentrix · 09/2024" },
+    { quote: "يسعدني أن أكتب هذه التزكية لزميلي العزيز حسام. خلال فترة عملنا في Concentrix، أظهر حسام باستمرار التزاماً عميقاً بمعالجة مشاكل الناس ويبذل دائماً قصارى جهده. يُظهر تعاطفاً ملحوظاً ويهتم حقاً برفاهية الآخرين. يستمع باهتمام ويفهم المخاوف قبل اتخاذ إجراء مدروس — مما يؤدي إلى قرارات حكيمة ومتعاطفة.", name: "Sorina Marin", role: "زميلة · Concentrix · 07/2024" }
+  ]
+},
     contact: {
       title: "لنتحدث.",
       openToWork: "متاح للعمل عن بعد في عمليات الدعم، الكتابة التقنية، أو سير العمل المدعومة بالذكاء الاصطناعي. مقيم في أوغسبورغ، ألمانيا.",
@@ -533,25 +509,13 @@ const translations = {
       ]
     },
     testimonials: {
-      title: "Was andere sagen",
-      items: [
-        {
-          quote: "Hussam findet Lösungen, die wir übersehen haben. Er sieht das Muster hinter dem Problem, nicht nur das Problem selbst.",
-          name: "Kollege",
-          role: "Support-Team · Concentrix"
-        },
-        {
-          quote: "Er hat mir bei meinem ersten Jobcenter-Termin geholfen und erklärt, warum jedes Dokument gebraucht wird. Das hatte vorher niemand getan.",
-          name: "Community-Mitglied",
-          role: "Augsburg"
-        },
-        {
-          quote: "Das Template-System, das er gebaut hat, hat die Arbeitsweise unseres Teams in Stoßzeiten verändert. Simpel, im Nachhinein offensichtlich — das ist der Punkt.",
-          name: "Team-Mitglied",
-          role: "Support Operations"
-        }
-      ]
-    },
+  title: "Was andere sagen",
+  items: [
+    { quote: "Großartiger Nesting-Buddy und ein sehr angenehmer Kollege, der sich gerne Zeit nimmt, um Arbeitsprozesse zu erklären. Es ist eine Freude, mit ihm zu arbeiten.", name: "Viriya Kaov", role: "Kollege · Concentrix · 03/2025" },
+    { quote: "Seit Hussam ins Team kam, hat er immer nach Spitzenleistung gestrebt. Sein tiefes Engagement für die beste Kundenerfahrung spiegelt sich schnell in seinen Performance-Stats wider. Er ist wirklich ein Shining Star. Es war immer eine Freude, mit ihm zu arbeiten.", name: "Christopher Kessel", role: "Kollege · Concentrix · 09/2024" },
+    { quote: "Es ist mir eine Freude, diese Referenz für meinen geschätzten Kollegen Hussam zu schreiben. Während unserer gemeinsamen Zeit bei Concentrix hat Hussam durchweg ein tiefes Engagement gezeigt, sich der Probleme von Menschen anzunehmen, und gibt stets sein Bestes. Er zeigt bemerkenswerte Empathie und kümmert sich aufrichtig um das Wohlergehen anderer. Er hört aufmerksam zu und versteht Anliegen, bevor er bedacht handelt — das führt zu fundierten und empathischen Entscheidungen.", name: "Sorina Marin", role: "Kollegin · Concentrix · 07/2024" }
+  ]
+},
     contact: {
       title: "Lass uns reden.",
       openToWork: "Offen für Remote-Stellen in Support Operations, Technical Writing oder KI-gestützten Workflows. Aktuell in Augsburg, Deutschland.",
