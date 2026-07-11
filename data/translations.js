@@ -135,7 +135,7 @@ const translations = {
         {
           label: "Educational Game (Live)",
           title: "Escape from Berlin",
-          url: "https://huss4am7.github.io/escape-from-berlin/",
+          url: "https://hussam-alturki.github.io/escape-from-berlin/",
           thumb: "img/projects/escape-thumb.jpg",
           thumbAlt: "Escape from Berlin game interface showing German bureaucracy quiz",
           problem: "Arabic-speaking learners of German lack context-relevant practice tools. Standard apps don't simulate real German bureaucratic and daily-life scenarios.",
@@ -145,7 +145,7 @@ const translations = {
         {
           label: "Housing Module (Live)",
           title: "Housing Survival",
-          url: "https://huss4am7.github.io/escape-from-berlin/housing_survival.html",
+          url: "https://hussam-alturki.github.io/escape-from-berlin/housing_survival.html",
           thumb: "img/projects/housing-thumb.jpg",
           thumbAlt: "Housing Survival game showing German rental market scenarios",
           problem: "Arabic-speaking newcomers face a steep learning curve in the German rental market — Schufa, Mietvertrag, Selbstauskunft, landlord expectations. Existing resources are text-heavy and passive.",
@@ -171,7 +171,7 @@ const translations = {
     print: {
       name: "Hussam Alturki", title: "Support Specialist · Multilingual · Remote-Ready",
       email: "huss4am@gmail.com", phone: "+49 176 21256819", linkedin: "linkedin.com/in/hussam-alturki",
-      backLanguages: "Languages: AR · DE · EN", backLocation: "Location: Augsburg, DE", backGithub: "GitHub: github.com/huss4am7"
+      backLanguages: "Languages: AR · DE · EN", backLocation: "Location: Augsburg, DE", backGithub: "GitHub: github.com/hussam-alturki"
     },
     footer: { text: "© 2026 Hussam Alturki · Built with HTML/CSS/JS · Hosted on GitHub Pages" }
   },
@@ -312,7 +312,7 @@ const translations = {
         {
           label: "لعبة تعليمية (مباشرة)",
           title: "الهروب من برلين",
-          url: "https://huss4am7.github.io/escape-from-berlin/",
+          url: "https://hussam-alturki.github.io/escape-from-berlin/",
           thumb: "img/projects/escape-thumb.jpg",
           thumbAlt: "واجهة لعبة الهروب من برلين تُظهر اختبار البيروقراطية الألمانية",
           problem: "الناطقون بالعربية الذين يتعلمون الألمانية يفتقرون إلى أدوات تدريب جذابة وذات سياق ملائم. التطبيقات القياسية لا تحاكي السيناريوهات الحقيقية.",
@@ -322,7 +322,7 @@ const translations = {
         {
           label: "وحدة السكن (مباشرة)",
           title: "البقاء في سوق السكن",
-          url: "https://huss4am7.github.io/escape-from-berlin/housing_survival.html",
+          url: "https://hussam-alturki.github.io/escape-from-berlin/housing_survival.html",
           thumb: "img/projects/housing-thumb.jpg",
           thumbAlt: "لعبة البقاء في سوق السكن تُظهر سيناريوهات الإيجار الألماني",
           problem: "الوافدون الجدد الناطقون بالعربية يواجهون منحنى تعليمي حاد في سوق الإيجار الألماني. الموارد الموجودة ثقيلة نصياً وسلبية.",
@@ -348,7 +348,7 @@ const translations = {
     print: {
       name: "حسام التركي", title: "أخصائي دعم · متعدد اللغات · جاهز للعمل عن بعد",
       email: "huss4am@gmail.com", phone: "+49 176 21256819", linkedin: "linkedin.com/in/hussam-alturki",
-      backLanguages: "اللغات: AR · DE · EN", backLocation: "الموقع: أوغسبورغ، ألمانيا", backGithub: "GitHub: github.com/huss4am7"
+      backLanguages: "اللغات: AR · DE · EN", backLocation: "الموقع: أوغسبورغ، ألمانيا", backGithub: "GitHub: github.com/hussam-alturki"
     },
     footer: { text: "© 2026 حسام التركي · مبني باستخدام HTML/CSS/JS · مستضاف على GitHub Pages" }
   },
@@ -489,7 +489,7 @@ const translations = {
         {
           label: "Lernspiel (Live)",
           title: "Escape from Berlin",
-          url: "https://huss4am7.github.io/escape-from-berlin/",
+          url: "https://hussam-alturki.github.io/escape-from-berlin/",
           thumb: "img/projects/escape-thumb.jpg",
           thumbAlt: "Escape from Berlin Spieloberfläche mit deutschem Bürokratie-Quiz",
           problem: "Arabischsprachige Deutschlerner haben keine kontextrelevanten Übungstools. Standard-Apps simulieren keine realen deutschen Alltagsszenarien.",
@@ -499,7 +499,7 @@ const translations = {
         {
           label: "Wohnungsmodul (Live)",
           title: "Housing Survival",
-          url: "https://huss4am7.github.io/escape-from-berlin/housing_survival.html",
+          url: "https://hussam-alturki.github.io/escape-from-berlin/housing_survival.html",
           thumb: "img/projects/housing-thumb.jpg",
           thumbAlt: "Housing Survival Spiel mit deutschen Mietmarkt-Szenarien",
           problem: "Arabischsprachige Neuankömmlinge stehen vor einer steilen Lernkurve im deutschen Mietmarkt. Bestehende Ressourcen sind textlastig und passiv.",
@@ -525,7 +525,7 @@ const translations = {
     print: {
       name: "Hussam Alturki", title: "Support-Spezialist · Mehrsprachig · Remote-Ready",
       email: "huss4am@gmail.com", phone: "+49 176 21256819", linkedin: "linkedin.com/in/hussam-alturki",
-      backLanguages: "Sprachen: AR · DE · EN", backLocation: "Standort: Augsburg, DE", backGithub: "GitHub: github.com/huss4am7"
+      backLanguages: "Sprachen: AR · DE · EN", backLocation: "Standort: Augsburg, DE", backGithub: "GitHub: github.com/hussam-alturki"
     },
     footer: { text: "© 2026 Hussam Alturki · Erstellt mit HTML/CSS/JS · Gehostet auf GitHub Pages" }
   }
