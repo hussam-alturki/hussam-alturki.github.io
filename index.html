@@ -72,11 +72,11 @@
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <nav class="nav no-print" role="navigation" aria-label="Main navigation">
+  <nav class="nav no-print" aria-label="Main navigation">
     <div class="container nav-container">
-      <a href="#" class="nav-logo" aria-label="Home">HA</a>
+      <a href="#" class="nav-logo" aria-label="HA — home">HA</a>
 
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+      <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span><span></span>
       </button>
 
@@ -91,11 +91,11 @@
 
       <div class="nav-controls">
         <div class="lang-switcher" role="group" aria-label="Language switcher">
-          <button data-lang="en" aria-label="English" aria-pressed="false">EN</button>
-          <button data-lang="ar" aria-label="Arabic" aria-pressed="false">AR</button>
-          <button data-lang="de" aria-label="German" aria-pressed="false">DE</button>
+          <button type="button" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+          <button type="button" data-lang="ar" aria-label="Arabic" aria-pressed="false">AR</button>
+          <button type="button" data-lang="de" aria-label="Deutsch" aria-pressed="false">DE</button>
         </div>
-        <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <button type="button" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
           <span class="theme-icon-light" aria-hidden="true">☀</span>
           <span class="theme-icon-dark" aria-hidden="true">☾</span>
         </button>
@@ -112,7 +112,10 @@
           <div class="hero-top">
             <div class="hero-visual">
               <div class="hero-img-frame">
-                <img src="img/hussam-formal.jpeg" alt="Hussam Alturki" class="hero-img" width="300" height="300" loading="eager" fetchpriority="high" decoding="async">
+                <picture>
+                  <source type="image/webp" srcset="img/hussam-formal-280.webp 280w, img/hussam-formal-560.webp 560w" sizes="(min-width: 768px) 264px, 84px">
+                  <img src="img/hussam-formal.jpeg" alt="Hussam Alturki" class="hero-img" width="560" height="560" loading="eager" fetchpriority="high" decoding="async">
+                </picture>
               </div>
             </div>
             <div class="hero-identity">
@@ -142,7 +145,10 @@
         </div>
         <div class="about-grid">
           <div class="about-visual">
-            <img src="img/hussam-casual.jpeg" alt="Hussam Alturki" class="about-img" width="600" height="600" loading="lazy" decoding="async">
+            <picture>
+              <source type="image/webp" srcset="img/hussam-casual-450.webp 450w, img/hussam-casual-900.webp 900w" sizes="(min-width: 768px) 420px, 92vw">
+              <img src="img/hussam-casual.jpeg" alt="Hussam Alturki" class="about-img" width="900" height="1200" loading="lazy" decoding="async">
+            </picture>
           </div>
           <div class="about-content">
             <div data-i18n-html="about.content"></div>

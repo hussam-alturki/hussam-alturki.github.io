@@ -496,7 +496,7 @@ html[lang="ar"] .services-location { font-style: normal; }
    11. SKILLS — plain columns
    ─────────────────────────────────────────────────── */
 .skills-grid { display: grid; gap: var(--sp-6); }
-.skill-category h4 {
+.skill-category h3 {
   font-size: var(--fs-label);
   font-weight: 600;
   text-transform: uppercase;
@@ -565,7 +565,6 @@ html[lang="ar"] .project-card h3 { letter-spacing: 0; }
 .project-body h4:first-child { margin-block-start: var(--sp-4); }
 .project-body p { font-size: var(--fs-meta); color: var(--text-2); line-height: var(--lh-body); max-inline-size: 65ch; }
 .project-link { display: inline-block; margin-block-start: var(--sp-4); font-weight: 600; font-size: var(--fs-meta); }
-.project-link::after { content: ' ↗'; }
 
 @media (min-width: 768px) {
   .project-card {

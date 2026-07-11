@@ -71,7 +71,7 @@ function renderSkills() {
   const cats = translations[currentLang].skills.categories;
   el.innerHTML = Object.entries(cats).map(([key, cat]) => `
     <div class="skill-category">
-      <h4>${cat.label}</h4>
+      <h3>${cat.label}</h3>
       <ul>${cat.items.map(item => `<li>${item}</li>`).join('')}</ul>
     </div>
   `).join('');
