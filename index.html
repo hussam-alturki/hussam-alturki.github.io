@@ -54,7 +54,7 @@
           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         document.documentElement.setAttribute('data-theme', theme);
         var lang = localStorage.getItem('lang');
-        if (lang) {
+        if (['en', 'ar', 'de'].indexOf(lang) !== -1) {
           document.documentElement.lang = lang;
           document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
         }

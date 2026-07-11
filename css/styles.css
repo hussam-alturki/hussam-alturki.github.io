@@ -10,7 +10,7 @@
    ─────────────────────────────────────────────────── */
 :root {
   /* families */
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-display: 'Playfair Display', georgia, serif;
   --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
 
   /* palette — light */
@@ -105,7 +105,6 @@ body {
   line-height: var(--lh-body);
   transition: background-color var(--t-med) var(--ease), color var(--t-med) var(--ease);
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -694,17 +693,17 @@ html[lang="ar"] .project-card h3 { letter-spacing: 0; }
   #beliefs, #testimonials, .superpowers-grid { display: none !important; }
   body { background: #fff !important; color: #000 !important; font-size: 11pt; }
   .section { border: none; padding-block: 1.25rem; }
-  section { page-break-inside: avoid; }
+  section { break-inside: avoid; }
   a[href]::after { content: none !important; }
   a { color: #000; text-decoration: none; }
 
-  .print-card { display: block; page-break-inside: avoid; }
+  .print-card { display: block; break-inside: avoid; }
   .print-card-front, .print-card-back {
     border: 1px solid #ccc;
     padding: 2rem;
     margin-bottom: 2rem;
     text-align: center;
-    page-break-inside: avoid;
+    break-inside: avoid;
   }
   .print-card-front h3 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem; }
   .print-card-front p, .print-card-back p { margin-bottom: 0.5rem; font-size: 0.9375rem; }

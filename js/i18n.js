@@ -1,7 +1,8 @@
 /* ═══════════════════════════════════════════════════
    i18n — LANGUAGE SYSTEM (single source of truth)
    ═══════════════════════════════════════════════════ */
-let currentLang = localStorage.getItem('lang') || 'en';
+let currentLang = localStorage.getItem('lang');
+if (!Object.prototype.hasOwnProperty.call(translations, currentLang)) currentLang = 'en';
 
 function getNestedValue(obj, path) {
   return path.split('.').reduce((o, p) => o && o[p], obj);
