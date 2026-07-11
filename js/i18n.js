@@ -1,5 +1,6 @@
-
-🔧 js/i18n.js — kompletten Inhalt ersetzen
+/* ═══════════════════════════════════════════════════
+   i18n — LANGUAGE SYSTEM (single source of truth)
+   ═══════════════════════════════════════════════════ */
 let currentLang = localStorage.getItem('lang') || 'en';
 
 function getNestedValue(obj, path) {
@@ -19,111 +20,115 @@ function updateSimpleContent() {
   });
 }
 
+/* ─── BELIEFS ─────────────────────────────────────── */
 function renderBeliefs() {
   const el = document.getElementById('beliefs-grid');
   if (!el) return;
   const items = (translations[currentLang].beliefs && translations[currentLang].beliefs.items) || [];
-  el.innerHTML = items.map(i => `
+  el.innerHTML = items.map(item => `
     <article class="belief-card">
-      <p class="belief-statement">${i.statement}</p>
-      <p class="belief-detail">${i.detail}</p>
+      <p class="belief-statement">${item.statement}</p>
+      <p class="belief-detail">${item.detail}</p>
     </article>
   `).join('');
 }
 
+/* ─── EXPERIENCE ──────────────────────────────────── */
 function renderExperience() {
   const el = document.getElementById('experience-timeline');
   if (!el) return;
   const items = translations[currentLang].experience.items || [];
-  el.innerHTML = items.map(i => `
+  el.innerHTML = items.map(item => `
     <div class="timeline-item">
-      <div class="timeline-period">${i.period}</div>
-      <div class="timeline-role">${i.role}</div>
-      <div class="timeline-company">${i.company}</div>
-      <div class="timeline-points">${i.points}</div>
-      ${i.insight ? `<div class="timeline-insight">${i.insight}</div>` : ''}
+      <div class="timeline-period">${item.period}</div>
+      <div class="timeline-role">${item.role}</div>
+      <div class="timeline-company">${item.company}</div>
+      <div class="timeline-points">${item.points}</div>
+      ${item.insight ? `<div class="timeline-insight">${item.insight}</div>` : ''}
     </div>
   `).join('');
 }
 
-function renderSuperpowers() {
+/* ─── SERVICES / SUPERPOWERS ──────────────────────── */
+function renderServices() {
   const el = document.getElementById('superpowers-grid');
   if (!el) return;
-  const t = translations[currentLang].services;
-  const items = (t && t.superpowers) || [];
-  const exLabel = (t && t.exampleLabel) || 'Example';
-  el.innerHTML = items.map((s, idx) => `
+  const powers = translations[currentLang].services.superpowers || [];
+  el.innerHTML = powers.map((p, i) => `
     <article class="superpower-card">
-      <span class="superpower-number">0${idx + 1}</span>
-      <h3 class="superpower-title">${s.title}</h3>
-      <p class="superpower-desc">${s.description}</p>
-      ${s.example ? `<p class="superpower-example"><span class="superpower-example-label">${exLabel}</span> ${s.example}</p>` : ''}
+      <span class="superpower-number" aria-hidden="true">0${i + 1}</span>
+      <h3 class="superpower-title">${p.title}</h3>
+      <p class="superpower-desc">${p.description}</p>
+      ${p.example ? `<p class="superpower-example">${p.example}</p>` : ''}
     </article>
   `).join('');
 }
 
+/* ─── SKILLS ──────────────────────────────────────── */
 function renderSkills() {
   const el = document.getElementById('skills-grid');
   if (!el) return;
   const cats = translations[currentLang].skills.categories;
-  el.innerHTML = Object.entries(cats).map(([k, c]) => `
+  el.innerHTML = Object.entries(cats).map(([key, cat]) => `
     <div class="skill-category">
-      <h4>${c.label}</h4>
-      <ul>${c.items.map(i => `<li>${i}</li>`).join('')}</ul>
+      <h4>${cat.label}</h4>
+      <ul>${cat.items.map(item => `<li>${item}</li>`).join('')}</ul>
     </div>
   `).join('');
 }
 
+/* ─── PROJECTS ────────────────────────────────────── */
 function renderProjects() {
   const el = document.getElementById('projects-grid');
   if (!el) return;
   const t = translations[currentLang].projects;
-  el.innerHTML = t.items.map(i => `
-    <article class="project-card${i.thumb ? ' has-thumb' : ''}">
-      ${i.thumb ? `<div class="project-thumb"><img src="${i.thumb}" alt="${i.thumbAlt || i.title}" loading="lazy" decoding="async"></div>` : ''}
+  el.innerHTML = t.items.map(item => `
+    <article class="project-card">
+      <div class="project-head">
+        <span class="project-label">${item.label}</span>
+        <h3>${item.title}</h3>
+      </div>
       <div class="project-body">
-        <span class="project-label">${i.label}</span>
-        <h3>${i.title}</h3>
-        <h4>${t.problemLabel}</h4><p>${i.problem}</p>
-        <h4>${t.actionLabel}</h4><p>${i.action}</p>
-        <h4>${t.resultLabel}</h4><p>${i.result}</p>
-        ${i.url ? `<a href="${i.url}" target="_blank" rel="noopener">${t.viewLive}</a>` : ''}
+        <h4>${t.problemLabel}</h4><p>${item.problem}</p>
+        <h4>${t.actionLabel}</h4><p>${item.action}</p>
+        <h4>${t.resultLabel}</h4><p>${item.result}</p>
+        ${item.url ? `<a class="project-link" href="${item.url}" target="_blank" rel="noopener">${t.viewLive}</a>` : ''}
       </div>
     </article>
   `).join('');
 }
 
+/* ─── TESTIMONIALS ────────────────────────────────── */
 function renderTestimonials() {
   const el = document.getElementById('testimonials-grid');
   if (!el) return;
   const items = (translations[currentLang].testimonials && translations[currentLang].testimonials.items) || [];
-  el.innerHTML = items.map(i => `
+  el.innerHTML = items.map(item => `
     <figure class="testimonial-card">
-      <blockquote class="testimonial-quote">${i.quote}</blockquote>
+      <blockquote class="testimonial-quote">${item.quote}</blockquote>
       <figcaption class="testimonial-meta">
-        <span class="testimonial-name">${i.name}</span>
-        ${i.role ? `<span class="testimonial-role">${i.role}</span>` : ''}
+        <span class="testimonial-name">${item.name}</span>
+        ${item.role ? `<span class="testimonial-role">${item.role}</span>` : ''}
       </figcaption>
     </figure>
   `).join('');
 }
 
+/* ─── SET LANGUAGE ────────────────────────────────── */
 function setLanguage(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
   localStorage.setItem('lang', lang);
-
   document.querySelectorAll('.lang-switcher button').forEach(btn => {
     const isActive = btn.getAttribute('data-lang') === lang;
     btn.classList.toggle('active', isActive);
     btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
   });
-
   updateSimpleContent();
   renderBeliefs();
   renderExperience();
-  renderSuperpowers();
+  renderServices();
   renderSkills();
   renderProjects();
   renderTestimonials();

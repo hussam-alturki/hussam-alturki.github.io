@@ -44,9 +44,27 @@
   }
   </script>
 
+  <meta name="theme-color" content="#F6F3EE" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#191715" media="(prefers-color-scheme: dark)">
+
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+        var lang = localStorage.getItem('lang');
+        if (lang) {
+          document.documentElement.lang = lang;
+          document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        }
+      } catch (e) { /* first paint falls back to the defaults on <html> */ }
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=Playfair+Display:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -116,7 +134,7 @@
     </section>
 
     <!-- ═══ ABOUT ═══ -->
-    <section id="about" class="about section grain">
+    <section id="about" class="about section">
       <div class="container">
         <div class="section-header">
           <span class="section-number">01</span>
@@ -145,7 +163,7 @@
     </section>
 
     <!-- ═══ EXPERIENCE ═══ -->
-    <section id="experience" class="experience section grain">
+    <section id="experience" class="experience section">
       <div class="container">
         <div class="section-header">
           <span class="section-number">03</span>
@@ -168,7 +186,7 @@
     </section>
 
     <!-- ═══ SKILLS ═══ -->
-    <section id="skills" class="skills section grain">
+    <section id="skills" class="skills section">
       <div class="container">
         <div class="section-header">
           <span class="section-number">05</span>
@@ -191,7 +209,7 @@
     </section>
 
     <!-- ═══ TESTIMONIALS ═══ -->
-    <section id="testimonials" class="testimonials section grain">
+    <section id="testimonials" class="testimonials section">
       <div class="container">
         <div class="section-header">
           <span class="section-number">07</span>
@@ -238,7 +256,7 @@
     </section>
 
     <!-- ═══ QR ═══ -->
-    <section id="qr" class="qr-section section grain">
+    <section id="qr" class="qr-section section">
       <div class="container">
         <div class="qr-card">
           <p class="qr-card-label" data-i18n="qr.cardLabel">Digital Business Card</p>
