@@ -209,7 +209,7 @@ a:hover { color: var(--accent-text-hover); }
 .cta-link.primary { color: var(--accent-text); }
 .cta-link.secondary { color: var(--text-primary); }
 .cta-link.tertiary { color: var(--text-muted); }
-.cta-link:hover { border-color: currentColor; }
+.cta-link:hover { border-color: currentcolor; }
 .cta-divider { width: 1px; height: var(--sp-4); background: var(--border-soft); }
 
 /* ─────────────────────────────────────────────
@@ -510,18 +510,18 @@ a:hover { color: var(--accent-text-hover); }
   .grain::before { display: none !important; }
   .section { border: none; padding-block: 1.25rem; }
   .sec-grid { grid-template-columns: 1fr; }
-  section { page-break-inside: avoid; }
-  .cs-sheet { page-break-inside: avoid; box-shadow: none !important; }
+  section { break-inside: avoid; }
+  .cs-sheet { break-inside: avoid; box-shadow: none !important; }
   a[href]::after { content: none !important; }
   a { color: #000; text-decoration: none; }
 
-  .print-card { display: block; page-break-inside: avoid; }
+  .print-card { display: block; break-inside: avoid; }
   .print-card-front, .print-card-back {
     border: 1px solid #ccc;
     padding: 2rem;
     margin-bottom: 2rem;
     text-align: center;
-    page-break-inside: avoid;
+    break-inside: avoid;
   }
   .print-card-front h3 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem; }
   .print-card-front p, .print-card-back p { margin-bottom: 0.5rem; font-size: 0.9375rem; }
