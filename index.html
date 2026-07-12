@@ -44,11 +44,12 @@
   }
   </script>
 
-  <meta name="theme-color" content="#F6F3EE" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#191715" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F7F5F2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1A1917" media="(prefers-color-scheme: dark)">
 
   <script>
     (function () {
+      document.documentElement.classList.add('js');
       try {
         var theme = localStorage.getItem('theme') ||
           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -64,7 +65,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -73,25 +74,19 @@
   <a href="#main" class="skip-link">Skip to content</a>
 
   <nav class="nav no-print" aria-label="Main navigation">
-    <div class="container nav-container">
-      <a href="#" class="nav-logo" aria-label="HA — home">HA</a>
-
-      <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-      </button>
-
+    <div class="container nav-row">
+      <a href="#main" class="nav-logo" aria-label="HA — home">HA</a>
       <div class="nav-menu" id="nav-menu">
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#experience" data-i18n="nav.experience">Experience</a>
-        <a href="#services" data-i18n="nav.services">Services</a>
-        <a href="#skills" data-i18n="nav.skills">Skills</a>
         <a href="#projects" data-i18n="nav.projects">Case Studies</a>
+        <a href="#services" data-i18n="nav.services">How I work</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </div>
-
       <div class="nav-controls">
         <div class="lang-switcher" role="group" aria-label="Language switcher">
-          <button type="button" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+          <button type="button" data-lang="en" aria-label="English" aria-pressed="true">EN</button>
           <button type="button" data-lang="ar" aria-label="Arabic" aria-pressed="false">AR</button>
           <button type="button" data-lang="de" aria-label="Deutsch" aria-pressed="false">DE</button>
         </div>
@@ -99,180 +94,426 @@
           <span class="theme-icon-light" aria-hidden="true">☀</span>
           <span class="theme-icon-dark" aria-hidden="true">☾</span>
         </button>
+        <button type="button" class="nav-burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </nav>
 
   <main id="main">
 
+    <!-- ═══ META STRIP — ledger column headers ═══ -->
+    <div class="meta-strip no-print">
+      <div class="container meta-grid">
+        <div class="meta-cell">
+          <span class="micro" data-i18n="meta.locationLabel">Location</span>
+          <span class="meta-value" data-i18n="meta.location">Augsburg, DE</span>
+        </div>
+        <div class="meta-cell">
+          <span class="micro" data-i18n="meta.langsLabel">Languages</span>
+          <span class="meta-value" data-i18n="meta.langs">AR · DE · EN</span>
+        </div>
+        <div class="meta-cell">
+          <span class="micro" data-i18n="meta.statusLabel">Status</span>
+          <span class="meta-value" data-i18n="meta.status">Open to remote roles</span>
+        </div>
+      </div>
+    </div>
+
     <!-- ═══ HERO ═══ -->
-    <section id="hero" class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-top">
-            <div class="hero-visual">
-              <div class="hero-img-frame">
+    <header class="hero" id="hero">
+      <div class="container hero-row reveal">
+        <div class="hero-frame">
+          <div class="photo">
+            <picture>
+              <source type="image/webp" srcset="img/hussam-formal-240.webp 240w, img/hussam-formal-480.webp 480w" sizes="(min-width: 821px) 200px, 160px">
+              <img src="img/hussam-formal.jpeg" alt="Hussam Alturki" width="480" height="600" loading="eager" fetchpriority="high" decoding="async">
+            </picture>
+          </div>
+        </div>
+        <div>
+          <div class="hero-rule"></div>
+          <h1 data-i18n="hero.name">Hussam Alturki</h1>
+          <p class="hero-tagline" data-i18n="hero.tagline">I translate complex systems for people who fall between the cracks — in three languages, in real time.</p>
+          <p class="hero-subtext" data-i18n="hero.subtext">Support operations · Multilingual systems · AI-assisted workflows. I find what's actually broken — not just what gets reported.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="cta-link primary" data-i18n="hero.ctaPrimary">View Case Studies</a>
+            <span class="cta-divider"></span>
+            <a href="#contact" class="cta-link secondary" data-i18n="hero.ctaSecondary">Get in Touch</a>
+            <span class="cta-divider"></span>
+            <a href="assets/CV_Hussam_Alturki.pdf" class="cta-link tertiary" data-i18n="hero.downloadCv" download>Download CV</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══ 01 ABOUT ═══ -->
+    <section id="about" class="section grain">
+      <div class="container sec-grid">
+        <div class="folio" aria-hidden="true"></div>
+        <div class="sec-head reveal">
+          <h2 data-i18n="about.title">About</h2>
+        </div>
+        <div class="sec-body about-grid reveal">
+          <div class="about-visual">
+            <div class="about-frame">
+              <div class="photo">
                 <picture>
-                  <source type="image/webp" srcset="img/hussam-formal-280.webp 280w, img/hussam-formal-560.webp 560w" sizes="(min-width: 768px) 264px, 84px">
-                  <img src="img/hussam-formal.jpeg" alt="Hussam Alturki" class="hero-img" width="560" height="560" loading="eager" fetchpriority="high" decoding="async">
+                  <source type="image/webp" srcset="img/hussam-casual-480.webp 480w, img/hussam-casual-900.webp 900w" sizes="(min-width: 821px) 400px, 288px">
+                  <img src="img/hussam-casual.jpeg" alt="Hussam Alturki" width="900" height="1125" loading="lazy" decoding="async">
                 </picture>
               </div>
             </div>
-            <div class="hero-identity">
-              <div class="hero-accent-line"></div>
-              <h1 data-i18n="hero.name">Hussam Alturki</h1>
+            <div class="about-caption">
+              <span class="micro" data-i18n="meta.location">Augsburg, DE</span>
+              <span class="micro" data-i18n="meta.langs">AR · DE · EN</span>
             </div>
           </div>
-          <div class="hero-body">
-            <p class="hero-tagline" data-i18n="hero.tagline">I translate complex systems for people who fall between the cracks — in three languages, in real time.</p>
-            <p class="hero-subtext" data-i18n="hero.subtext">Support operations · Multilingual systems · AI-assisted workflows. I find what's actually broken — not just what gets reported.</p>
-            <div class="hero-actions">
-              <a href="#projects" class="btn btn-primary" data-i18n="hero.ctaPrimary">View Case Studies</a>
-              <a href="#contact" class="btn btn-secondary" data-i18n="hero.ctaSecondary">Get in Touch</a>
-              <a href="assets/CV_Hussam_Alturki.pdf" class="btn btn-ghost" data-i18n="hero.downloadCv" download>Download CV</a>
-            </div>
+          <div class="about-copy" data-i18n-html="about.content">
+            <p>I came to Germany without knowing how it works here. I learned — the hard way, through bureaucracy, language barriers, and a system that assumes you already know the rules. That experience is now one of my most useful tools.</p>
+            <p>Today I work at Concentrix handling Meta Platform escalations — complex cases, CRM documentation, quality standards under pressure. I've also done field sales at Vodafone, front desk at a hotel in three languages, and freelance IT support. The thread across all of it: I find what's actually broken, not just what gets reported — and I communicate the fix clearly.</p>
+            <p>On the side: I build browser-based learning games for Arabic speakers navigating German life. I run structured stress-tests on LLMs to understand where they actually fail. I help people in my community with housing searches, job applications, and Behörden appointments. I applied for a Team Lead position at Concentrix — not because I had to, but because I wanted to make the team around me better.</p>
+            <p>I don't have a clean career narrative yet. What I have is a very specific skill set at a very unusual intersection — and I'm building toward something with it.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ ABOUT ═══ -->
-    <section id="about" class="about section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-number">01</span>
-          <h2 data-i18n="about.title">About</h2>
-        </div>
-        <div class="about-grid">
-          <div class="about-visual">
-            <picture>
-              <source type="image/webp" srcset="img/hussam-casual-450.webp 450w, img/hussam-casual-900.webp 900w" sizes="(min-width: 768px) 420px, 92vw">
-              <img src="img/hussam-casual.jpeg" alt="Hussam Alturki" class="about-img" width="900" height="1200" loading="lazy" decoding="async">
-            </picture>
-          </div>
-          <div class="about-content">
-            <div data-i18n-html="about.content"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ BELIEFS ═══ -->
-    <section id="beliefs" class="beliefs section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-number">02</span>
-          <h2 data-i18n="beliefs.title">What I believe</h2>
-        </div>
-        <div class="beliefs-grid" id="beliefs-grid"></div>
-      </div>
-    </section>
-
-    <!-- ═══ EXPERIENCE ═══ -->
-    <section id="experience" class="experience section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-number">03</span>
+    <!-- ═══ 02 EXPERIENCE — ledger table ═══ -->
+    <section id="experience" class="section">
+      <div class="container sec-grid">
+        <div class="folio" aria-hidden="true"></div>
+        <div class="sec-head reveal">
           <h2 data-i18n="experience.title">Experience</h2>
         </div>
-        <div class="timeline" id="experience-timeline"></div>
+        <div class="sec-body reveal">
+          <div class="xp-table">
+            <div class="xp-row">
+              <div class="xp-period" data-i18n="experience.items.0.period">09.2023 – Present</div>
+              <div>
+                <h3 class="xp-role" data-i18n="experience.items.0.role">Customer Support Specialist</h3>
+                <p class="xp-company" data-i18n="experience.items.0.company">Concentrix · Meta Platforms</p>
+                <p class="xp-points" data-i18n="experience.items.0.points">Tier-1 support via chat/email/outbound. Complex case handling. Daily CRM &amp; ticketing. Structured case documentation. Internal Team Lead application (German team).</p>
+              </div>
+              <p class="xp-insight" data-i18n="experience.items.0.insight">Learned: How large platforms scale escalations — and exactly where they break.</p>
+            </div>
+            <div class="xp-row">
+              <div class="xp-period" data-i18n="experience.items.1.period">03.2023 – 08.2023</div>
+              <div>
+                <h3 class="xp-role" data-i18n="experience.items.1.role">Field Sales Partner</h3>
+                <p class="xp-company" data-i18n="experience.items.1.company">Vodafone</p>
+                <p class="xp-points" data-i18n="experience.items.1.points">Direct customer consultation. Needs analysis. Complaint resolution. Contract closing.</p>
+              </div>
+              <p class="xp-insight" data-i18n="experience.items.1.insight">Learned: How to decode a customer's real need in 30 seconds.</p>
+            </div>
+            <div class="xp-row">
+              <div class="xp-period" data-i18n="experience.items.2.period">10.2022 – 03.2023</div>
+              <div>
+                <h3 class="xp-role" data-i18n="experience.items.2.role">Receptionist</h3>
+                <p class="xp-company" data-i18n="experience.items.2.company">Select Hotel Augsburg</p>
+                <p class="xp-points" data-i18n="experience.items.2.points">Guest handling in DE/EN/AR. Booking systems. Cross-department coordination.</p>
+              </div>
+              <p class="xp-insight" data-i18n="experience.items.2.insight">Learned: Three languages, one problem — simultaneous context-switching under pressure.</p>
+            </div>
+            <div class="xp-row">
+              <div class="xp-period" data-i18n="experience.items.3.period">08.2021 – 06.2023</div>
+              <div>
+                <h3 class="xp-role" data-i18n="experience.items.3.role">IT Support (Freelance)</h3>
+                <p class="xp-company" data-i18n="experience.items.3.company">Self-employed</p>
+                <p class="xp-points" data-i18n="experience.items.3.points">Hardware/software support. Device rollouts. Independent client management.</p>
+              </div>
+              <p class="xp-insight" data-i18n="experience.items.3.insight">Learned: Devices are only as good as the documentation around them.</p>
+            </div>
+            <div class="xp-row">
+              <div class="xp-period" data-i18n="experience.items.4.period">02.2020 – 09.2022</div>
+              <div>
+                <h3 class="xp-role" data-i18n="experience.items.4.role">Event Manager</h3>
+                <p class="xp-company" data-i18n="experience.items.4.company">Xclusive Events</p>
+                <p class="xp-points" data-i18n="experience.items.4.points">Full event coordination from briefing to wrap-up. On-site team leadership.</p>
+              </div>
+              <p class="xp-insight" data-i18n="experience.items.4.insight">Learned: How to synchronize 15 moving parts when nothing runs on schedule.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ═══ SERVICES / SUPERPOWERS ═══ -->
-    <section id="services" class="services section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-number">04</span>
+    <!-- ═══ 03 CASE STUDIES — dossier sheets ═══ -->
+    <section id="projects" class="section grain">
+      <div class="container sec-grid">
+        <div class="folio" aria-hidden="true"></div>
+        <div class="sec-head reveal">
+          <h2 data-i18n="projects.title">Case Studies</h2>
+          <p class="sec-note" data-i18n="projects.disclaimer">Based on real workflows — these reflect how I think, not polished production deployments.</p>
+        </div>
+        <div class="sec-body cs-list">
+
+          <article class="cs-sheet reveal">
+            <header class="cs-head">
+              <span class="cs-num" aria-hidden="true"></span>
+              <h3 class="cs-title" data-i18n="projects.items.0.title">Stress-Testing LLMs at Cultural Edge Cases</h3>
+              <span class="cs-pill" data-i18n="projects.items.0.label">LLM Research (Ongoing)</span>
+              <a class="cs-live" href="https://linkedin.com/in/hussam-alturki" target="_blank" rel="noopener" data-i18n="projects.viewLive">View Live Project →</a>
+            </header>
+            <div class="cs-rows">
+              <div class="cs-row"><div class="k micro" data-i18n="projects.problemLabel">Problem</div><div class="v" data-i18n="projects.items.0.problem">Most AI comparisons test generic writing. Nobody systematically tests how LLMs handle multilingual context-switching, Islamic jurisprudential reasoning, or Arabic/German language edge cases — real professional scenarios, not toy prompts.</div></div>
+              <div class="cs-row"><div class="k micro" data-i18n="projects.actionLabel">Action</div><div class="v" data-i18n="projects.items.0.action">Designed structured stress tests across Claude, GPT, Gemini, Kimi, and Qwen. Documented response patterns, failure modes, and architectural biases with consistent methodology: controlled variables, same prompt structure, recorded results.</div></div>
+              <div class="cs-row"><div class="k micro" data-i18n="projects.resultLabel">Result</div><div class="v" data-i18n="projects.items.0.result">Detailed comparative findings on where each model excels and fails under specialized conditions. Published on LinkedIn. Applied AI literacy — understanding how models work, not just what they produce.</div></div>
+            </div>
+          </article>
+
+          <article class="cs-sheet reveal">
+            <header class="cs-head">
+              <span class="cs-num" aria-hidden="true"></span>
+              <h3 class="cs-title" data-i18n="projects.items.1.title">Template System &amp; KPI Automation</h3>
+              <span class="cs-pill" data-i18n="projects.items.1.label">Support Ops (Real)</span>
+            </header>
+            <div class="cs-rows">
+              <div class="cs-row"><div class="k micro" data-i18n="projects.problemLabel">Problem</div><div class="v" data-i18n="projects.items.1.problem">In high-volume live chat, agents waste time scrolling through long template lists. Every search second compounds across dozens of daily interactions. KPI tracking required manual calculation with no forward visibility.</div></div>
+              <div class="cs-row"><div class="k micro" data-i18n="projects.actionLabel">Action</div><div class="v" data-i18n="projects.items.1.action">Built a structured Google Sheets dashboard — color-coded by conversation phase, tagged by situation type, everything on one screen. Built a personal KPI tracker that auto-calculates daily metrics and projects performance against targets. Deliberately developed a distinct written style for a recognizable customer experience.</div></div>
+              <div class="cs-row"><div class="k micro" data-i18n="projects.resultLabel">Result</div><div class="v" data-i18n="projects.items.1.result">Faster response times. Consistent quality across interaction phases. Proactive performance management. A measurable personal fingerprint across case documentation.</div></div>
+            </div>
+          </article>
+
+          <article class="cs-sheet reveal">
+            <header class="cs-head">
+              <span class="cs-num" aria-hidden="true"></span>
+              <h3 class="cs-title" data-i18n="projects.items.2.title">Escape from Berlin</h3>
+              <span class="cs-pill" data-i18n="projects.items.2.label">Educational Game (Live)</span>
+              <a class="cs-live" href="https://hussam-alturki.github.io/escape-from-berlin/" target="_blank" rel="noopener" data-i18n="projects.viewLive">View Live Project →</a>
+            </header>
+            <div class="cs-rows">
+              <div class="cs-row"><div class="k micro" data-i18n="projects.problemLabel">Problem</div><div class="v" data-i18n="projects.items.2.problem">Arabic-speaking learners of German lack context-relevant practice tools. Standard apps don't simulate real German bureaucratic and daily-life scenarios.</div></div>
+              <div class="cs-row"><div class="k micro" data-i18n="projects.actionLabel">Action</div><div class="v" data-i18n="projects.items.2.action">Built a multilingual browser game in HTML/CSS/JS with three progressive difficulty levels, multiple game modes, and competitive multi-team format. Full RTL/LTR layout switching, responsive design, deployed on GitHub Pages.</div></div>
+              <div class="cs-row"><div class="k micro" data-i18n="projects.resultLabel">Result</div><div class="v" data-i18n="projects.items.2.result">A functional, shareable educational tool demonstrating cross-domain skills: language pedagogy, frontend development, UX thinking, and deployment workflow.</div></div>
+            </div>
+          </article>
+
+          <article class="cs-sheet reveal">
+            <header class="cs-head">
+              <span class="cs-num" aria-hidden="true"></span>
+              <h3 class="cs-title" data-i18n="projects.items.3.title">Housing Survival</h3>
+              <span class="cs-pill" data-i18n="projects.items.3.label">Housing Module (Live)</span>
+              <a class="cs-live" href="https://hussam-alturki.github.io/escape-from-berlin/housing_survival.html" target="_blank" rel="noopener" data-i18n="projects.viewLive">View Live Project →</a>
+            </header>
+            <div class="cs-rows">
+              <div class="cs-row"><div class="k micro" data-i18n="projects.problemLabel">Problem</div><div class="v" data-i18n="projects.items.3.problem">Arabic-speaking newcomers face a steep learning curve in the German rental market — Schufa, Mietvertrag, Selbstauskunft, landlord expectations. Existing resources are text-heavy and passive.</div></div>
+              <div class="cs-row"><div class="k micro" data-i18n="projects.actionLabel">Action</div><div class="v" data-i18n="projects.items.3.action">Standalone game module simulating real housing search scenarios — players make decisions, encounter typical landlord responses, learn the correct sequence through consequence-based gameplay. Integrated into the same bilingual RTL/LTR framework.</div></div>
+              <div class="cs-row"><div class="k micro" data-i18n="projects.resultLabel">Result</div><div class="v" data-i18n="projects.items.3.result">Practical gamified tool for one of the most common pain points for Arabic speakers in Germany. Translates bureaucratic domain knowledge into structured interactive experience.</div></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 04 BELIEFS — soft band, ruled 2×2 ═══ -->
+    <section id="beliefs" class="section beliefs">
+      <div class="container sec-grid">
+        <div class="folio" aria-hidden="true"></div>
+        <div class="sec-head reveal">
+          <h2 data-i18n="beliefs.title">What I believe</h2>
+        </div>
+        <div class="sec-body belief-grid reveal">
+          <div class="belief-cell">
+            <span class="belief-idx" aria-hidden="true">01</span>
+            <h3 class="belief-statement" data-i18n="beliefs.items.0.statement">Most support failures are documentation failures.</h3>
+            <p class="belief-detail" data-i18n="beliefs.items.0.detail">The problem was solved once — it just wasn't written down well enough to solve it again.</p>
+          </div>
+          <div class="belief-cell">
+            <span class="belief-idx" aria-hidden="true">02</span>
+            <h3 class="belief-statement" data-i18n="beliefs.items.1.statement">Language is not just communication. It's access.</h3>
+            <p class="belief-detail" data-i18n="beliefs.items.1.detail">If you can't navigate a system in its language, you don't have access to it — regardless of your rights on paper.</p>
+          </div>
+          <div class="belief-cell">
+            <span class="belief-idx" aria-hidden="true">03</span>
+            <h3 class="belief-statement" data-i18n="beliefs.items.2.statement">AI tools are only as good as the person using them.</h3>
+            <p class="belief-detail" data-i18n="beliefs.items.2.detail">I've tested enough models to know: the bottleneck is almost never the model. It's the prompt, the context, the judgment.</p>
+          </div>
+          <div class="belief-cell">
+            <span class="belief-idx" aria-hidden="true">04</span>
+            <h3 class="belief-statement" data-i18n="beliefs.items.3.statement">The best support agent isn't always the fastest one.</h3>
+            <p class="belief-detail" data-i18n="beliefs.items.3.detail">The agent who builds the template that makes everyone faster — that's a different kind of value.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 05 HOW I WORK — numbered rows ═══ -->
+    <section id="services" class="section">
+      <div class="container sec-grid">
+        <div class="folio" aria-hidden="true"></div>
+        <div class="sec-head reveal">
           <h2 data-i18n="services.title">How I work</h2>
         </div>
-        <div class="superpowers-grid" id="superpowers-grid"></div>
-        <p class="services-location" data-i18n="services.locationNote">In person · Augsburg area</p>
+        <div class="sec-body reveal">
+          <div class="svc-list">
+            <div class="svc-row">
+              <span class="svc-num" aria-hidden="true">01</span>
+              <div>
+                <h3 class="svc-title" data-i18n="services.superpowers.0.title">Support Operations &amp; Documentation</h3>
+                <p class="svc-desc" data-i18n="services.superpowers.0.description">I design systems that make support scalable — not just functional. From CRM workflows and response templates to KPI tracking and SOP documentation, I build the layer between people and platforms that keeps quality consistent.</p>
+              </div>
+              <div class="svc-example">
+                <span class="micro" data-i18n="services.exampleLabel">In practice</span>
+                <p data-i18n="services.superpowers.0.example">At Concentrix: built a template dashboard and personal KPI tracker that cut search time and made performance management proactive instead of reactive.</p>
+              </div>
+            </div>
+            <div class="svc-row">
+              <span class="svc-num" aria-hidden="true">02</span>
+              <div>
+                <h3 class="svc-title" data-i18n="services.superpowers.1.title">Multilingual UX &amp; Content</h3>
+                <p class="svc-desc" data-i18n="services.superpowers.1.description">I don't just translate words — I translate contexts. Building tools for Arabic speakers navigating German bureaucracy taught me that language is structure, and structure needs to be rebuilt for each culture, not just relabeled.</p>
+              </div>
+              <div class="svc-example">
+                <span class="micro" data-i18n="services.exampleLabel">In practice</span>
+                <p data-i18n="services.superpowers.1.example">Built 'Escape from Berlin' and 'Housing Survival' — browser games teaching German bureaucratic processes to Arabic speakers, with full RTL/LTR switching.</p>
+              </div>
+            </div>
+            <div class="svc-row">
+              <span class="svc-num" aria-hidden="true">03</span>
+              <div>
+                <h3 class="svc-title" data-i18n="services.superpowers.2.title">AI Workflow Integration</h3>
+                <p class="svc-desc" data-i18n="services.superpowers.2.description">I stress-test AI tools against real professional edge cases — multilingual context switching, culturally nuanced instructions, conflicting prompts. Then I build workflows that use AI where it actually helps and document where it doesn't.</p>
+              </div>
+              <div class="svc-example">
+                <span class="micro" data-i18n="services.exampleLabel">In practice</span>
+                <p data-i18n="services.superpowers.2.example">Ran systematic comparative tests across Claude, GPT, Gemini, Kimi, and Qwen on Islamic jurisprudential reasoning and Arabic/German language edge cases. Published findings on LinkedIn.</p>
+              </div>
+            </div>
+          </div>
+          <p class="svc-location micro" data-i18n="services.locationNote">In person · Augsburg area</p>
+        </div>
       </div>
     </section>
 
-    <!-- ═══ SKILLS ═══ -->
-    <section id="skills" class="skills section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-number">05</span>
+    <!-- ═══ 06 SKILLS — four ruled columns ═══ -->
+    <section id="skills" class="section grain">
+      <div class="container sec-grid">
+        <div class="folio" aria-hidden="true"></div>
+        <div class="sec-head reveal">
           <h2 data-i18n="skills.title">Skills</h2>
         </div>
-        <div class="skills-grid" id="skills-grid"></div>
-      </div>
-    </section>
-
-    <!-- ═══ PROJECTS ═══ -->
-    <section id="projects" class="projects section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-number">06</span>
-          <h2 data-i18n="projects.title">Case Studies</h2>
+        <div class="sec-body skills-grid reveal">
+          <div class="skill-col">
+            <span class="micro" data-i18n="skills.categories.communication.label">Communication</span>
+            <ul>
+              <li data-i18n="skills.categories.communication.items.0">Arabic (Native)</li>
+              <li data-i18n="skills.categories.communication.items.1">German C1 – TELC certified</li>
+              <li data-i18n="skills.categories.communication.items.2">English – Professional fluency</li>
+            </ul>
+          </div>
+          <div class="skill-col">
+            <span class="micro" data-i18n="skills.categories.tools.label">Tools &amp; Systems</span>
+            <ul>
+              <li data-i18n="skills.categories.tools.items.0">CRM &amp; Ticketing systems (daily use)</li>
+              <li data-i18n="skills.categories.tools.items.1">Case management &amp; documentation</li>
+              <li data-i18n="skills.categories.tools.items.2">MS Office (structured reporting)</li>
+              <li data-i18n="skills.categories.tools.items.3">Booking management systems</li>
+            </ul>
+          </div>
+          <div class="skill-col">
+            <span class="micro" data-i18n="skills.categories.methods.label">Methods</span>
+            <ul>
+              <li data-i18n="skills.categories.methods.items.0">De-escalation &amp; complaint management</li>
+              <li data-i18n="skills.categories.methods.items.1">Needs analysis &amp; structured problem breakdown</li>
+              <li data-i18n="skills.categories.methods.items.2">Pattern recognition in recurring issues</li>
+              <li data-i18n="skills.categories.methods.items.3">Cross-functional coordination (support ↔ QA ↔ ops)</li>
+            </ul>
+          </div>
+          <div class="skill-col progress">
+            <span class="micro" data-i18n="skills.categories.progress.label">In Progress</span>
+            <ul>
+              <li data-i18n="skills.categories.progress.items.0">HTML/CSS/JavaScript (building projects)</li>
+              <li data-i18n="skills.categories.progress.items.1">Python basics</li>
+              <li data-i18n="skills.categories.progress.items.2">AI workflow integration</li>
+              <li data-i18n="skills.categories.progress.items.3">PowerShell/CMD</li>
+            </ul>
+          </div>
         </div>
-        <p class="projects-disclaimer" data-i18n="projects.disclaimer"></p>
-        <div class="projects-grid" id="projects-grid"></div>
       </div>
     </section>
 
-    <!-- ═══ TESTIMONIALS ═══ -->
-    <section id="testimonials" class="testimonials section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-number">07</span>
+    <!-- ═══ 07 TESTIMONIALS — lead quote + pair ═══ -->
+    <section id="testimonials" class="section">
+      <div class="container sec-grid">
+        <div class="folio" aria-hidden="true"></div>
+        <div class="sec-head reveal">
           <h2 data-i18n="testimonials.title">What people say</h2>
         </div>
-        <div class="testimonials-grid" id="testimonials-grid"></div>
+        <div class="sec-body reveal">
+          <div class="tst-lead">
+            <blockquote data-i18n="testimonials.items.0.quote">I am pleased to write this reference for my esteemed colleague, Hussam. Throughout our time at Concentrix, Hussam has consistently shown a deep commitment to addressing people's problems and always gives his best effort. He demonstrates remarkable empathy and genuinely cares about the well-being of others. He listens attentively and understands concerns before taking thoughtful action, which leads to well-informed and compassionate decisions.</blockquote>
+            <div class="tst-attr">
+              <span class="tst-name" data-i18n="testimonials.items.0.name">Sorina Marin</span>
+              <span class="tst-role" data-i18n="testimonials.items.0.role">Colleague · Concentrix · 07/2024</span>
+            </div>
+          </div>
+          <div class="tst-pair">
+            <div class="tst-cell">
+              <blockquote data-i18n="testimonials.items.1.quote">Ever since Hussam came into the team he always aimed for the top. His deep commitment to provide the best experience for our customers has quickly reflected in his performance stats. He truly is a shining star. It's always been a pleasure working with you.</blockquote>
+              <div class="tst-attr">
+                <span class="tst-name" data-i18n="testimonials.items.1.name">Christopher Kessel</span>
+                <span class="tst-role" data-i18n="testimonials.items.1.role">Colleague · Concentrix · 09/2024</span>
+              </div>
+            </div>
+            <div class="tst-cell">
+              <blockquote data-i18n="testimonials.items.2.quote">Great nesting buddy and a very pleasant colleague who is happy to take the time to explain work processes to you. It's great to work with him.</blockquote>
+              <div class="tst-attr">
+                <span class="tst-name" data-i18n="testimonials.items.2.name">Viriya Kaov</span>
+                <span class="tst-role" data-i18n="testimonials.items.2.role">Colleague · Concentrix · 03/2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ═══ CONTACT ═══ -->
-    <section id="contact" class="contact section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-number">08</span>
+    <!-- ═══ 08 CONTACT + digital card ═══ -->
+    <section id="contact" class="section grain">
+      <div class="container sec-grid">
+        <div class="folio" aria-hidden="true"></div>
+        <div class="sec-head reveal">
           <h2 data-i18n="contact.title">Let's talk.</h2>
         </div>
-        <div class="contact-grid">
-          <p class="contact-status" data-i18n="contact.openToWork"></p>
-          <div class="contact-items-grid">
-            <a href="mailto:huss4am@gmail.com" class="contact-item" aria-label="Email">
-              <svg class="contact-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-              <span class="contact-label">Email</span>
-              <span class="contact-value">huss4am@gmail.com</span>
-            </a>
-            <a href="https://wa.me/4917621256819" class="contact-item" target="_blank" rel="noopener" aria-label="WhatsApp">
-              <svg class="contact-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-              <span class="contact-label">WhatsApp</span>
-              <span class="contact-value">+49 176 21256819</span>
-            </a>
-            <a href="https://linkedin.com/in/hussam-alturki" class="contact-item" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg class="contact-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              <span class="contact-label">LinkedIn</span>
-              <span class="contact-value">in/hussam-alturki</span>
-            </a>
-            <a href="https://github.com/hussam-alturki" class="contact-item" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg class="contact-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              <span class="contact-label">GitHub</span>
-              <span class="contact-value">hussam-alturki</span>
-            </a>
+        <div class="sec-body contact-grid reveal">
+          <div>
+            <p class="contact-status" data-i18n="contact.openToWork">Open to remote-first roles in support operations, technical writing, or AI-assisted workflows. Currently based in Augsburg, Germany.</p>
+            <div class="contact-items">
+              <a href="mailto:huss4am@gmail.com" class="contact-item">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
+                <span class="contact-label">Email</span>
+                <span class="contact-value">huss4am@gmail.com</span>
+              </a>
+              <a href="https://wa.me/4917621256819" class="contact-item" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                <span class="contact-label">WhatsApp</span>
+                <span class="contact-value">+49 176 21256819</span>
+              </a>
+              <a href="https://linkedin.com/in/hussam-alturki" class="contact-item" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">in/hussam-alturki</span>
+              </a>
+              <a href="https://github.com/hussam-alturki" class="contact-item" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">hussam-alturki</span>
+              </a>
+            </div>
+            <a href="assets/CV_Hussam_Alturki.pdf" class="btn-primary" data-i18n="contact.downloadCv" download>Download CV</a>
           </div>
-          <a href="assets/CV_Hussam_Alturki.pdf" class="btn btn-primary" data-i18n="contact.downloadCv" download>Download CV</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ QR ═══ -->
-    <section id="qr" class="qr-section section">
-      <div class="container">
-        <div class="qr-card">
-          <p class="qr-card-label" data-i18n="qr.cardLabel">Digital Business Card</p>
-          <div id="qrcode"></div>
-          <p class="qr-label" data-i18n="qr.title">Scan to view my profile</p>
-          <div class="qr-card-identity">
-            <h3 class="qr-card-name">Hussam Alturki</h3>
-            <p class="qr-card-role" data-i18n="qr.role">Support Specialist · AR · DE · EN</p>
-            <p class="qr-card-location" data-i18n="qr.location">Augsburg, DE</p>
-          </div>
+          <aside class="qr-card">
+            <span class="micro" data-i18n="qr.cardLabel">Digital Business Card</span>
+            <div class="qr-chip">
+              <div id="qrcode"><div class="qr-fallback">hussam-alturki.github.io</div></div>
+            </div>
+            <span class="qr-scan" data-i18n="qr.title">Scan to view my profile</span>
+            <h3 class="qr-name">Hussam Alturki</h3>
+            <p class="qr-role" data-i18n="qr.role">Support Specialist · AR · DE · EN</p>
+            <p class="qr-location" data-i18n="qr.location">Augsburg, DE</p>
+          </aside>
         </div>
       </div>
     </section>
@@ -299,9 +540,9 @@
   </main>
 
   <footer class="footer no-print">
-    <div class="container footer-grid">
+    <div class="container footer-row">
       <a href="mailto:huss4am@gmail.com" class="footer-email">huss4am@gmail.com</a>
-      <p data-i18n="footer.text"></p>
+      <p class="footer-text" data-i18n="footer.text">© 2026 Hussam Alturki · Built with HTML/CSS/JS · Hosted on GitHub Pages</p>
     </div>
   </footer>
 
