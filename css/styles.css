@@ -299,6 +299,14 @@ a:hover { color: var(--accent-text-hover); }
 [dir="rtl"] .cs-pill { letter-spacing: 0; font-size: 0.8125rem; }
 .cs-live { font-size: 0.875rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
 .cs-live:hover { text-decoration: underline; text-underline-offset: 3px; }
+.cs-body { display: grid; grid-template-columns: 320px minmax(0, 1fr); }
+.cs-media { margin: 0; padding: var(--sp-5) var(--sp-6); border-inline-end: 1px solid var(--border-soft); }
+.cs-media .photo { aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--border-soft); border-radius: var(--radius); }
+.cs-sheet:hover .cs-media .photo img, .cs-sheet:focus-within .cs-media .photo img { filter: grayscale(0%); }
+[data-theme="dark"] .cs-media .photo img { filter: grayscale(15%) brightness(0.85); }
+[data-theme="dark"] .cs-media .photo:hover img,
+[data-theme="dark"] .cs-sheet:hover .cs-media .photo img,
+[data-theme="dark"] .cs-sheet:focus-within .cs-media .photo img { filter: grayscale(0%) brightness(1); }
 .cs-rows { display: grid; align-content: start; }
 .cs-row {
   display: grid; grid-template-columns: 112px 1fr; column-gap: var(--sp-5);
@@ -472,6 +480,8 @@ a:hover { color: var(--accent-text-hover); }
   .xp-row { grid-template-columns: 1fr; row-gap: var(--sp-2); }
   .xp-insight { grid-column: 1; }
 
+  .cs-body { grid-template-columns: 1fr; }
+  .cs-media { border-inline-end: none; border-bottom: 1px solid var(--border-soft); padding: var(--sp-5); }
   .cs-row { grid-template-columns: 1fr; row-gap: var(--sp-1); padding-inline: var(--sp-5); }
 
   .belief-grid { grid-template-columns: 1fr; }
@@ -503,7 +513,7 @@ a:hover { color: var(--accent-text-hover); }
 
 @media print {
   .no-print, .nav, .meta-strip, .theme-toggle, .lang-switcher, .nav-burger,
-  .skip-link, .footer, .qr-card, .folio,
+  .skip-link, .footer, .qr-card, .folio, .cs-media,
   #beliefs, #testimonials { display: none !important; }
   body { background: #fff !important; color: #000 !important; font-size: 11pt; }
   .js .reveal { opacity: 1 !important; transform: none !important; }

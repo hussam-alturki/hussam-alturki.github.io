@@ -21,6 +21,10 @@ function applyLang(lang) {
     var v = getPath(t, el.getAttribute('data-i18n-html'));
     if (typeof v === 'string') el.innerHTML = v;
   });
+  document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+    var v = getPath(t, el.getAttribute('data-i18n-alt'));
+    if (typeof v === 'string') el.setAttribute('alt', v);
+  });
   document.querySelectorAll('.lang-switcher button').forEach(function (b) {
     b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
   });
