@@ -488,7 +488,8 @@ a:hover { color: var(--accent-text-hover); }
 
   .cs-body { grid-template-columns: 1fr; }
   .cs-media { border-inline-end: none; border-bottom: 1px solid var(--border-soft); padding: var(--sp-5); display: block; }
-  .cs-media .photo { min-height: 0; aspect-ratio: 3 / 2; }
+  .cs-media .photo { min-height: 0; aspect-ratio: 3 / 4; max-height: 60vh; }
+  .cs-media .photo img { object-position: center; }
   .cs-row { grid-template-columns: 1fr; row-gap: var(--sp-1); padding-inline: var(--sp-5); }
 
   .belief-grid { grid-template-columns: 1fr; }
