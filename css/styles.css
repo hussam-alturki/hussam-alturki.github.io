@@ -300,9 +300,20 @@ a:hover { color: var(--accent-text-hover); }
 .cs-live { font-size: 0.875rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
 .cs-live:hover { text-decoration: underline; text-underline-offset: 3px; }
 .cs-body { display: grid; grid-template-columns: 340px minmax(0, 1fr); }
-.cs-media { margin: 0; padding: var(--sp-5) var(--sp-6); border-inline-end: 1px solid var(--border-soft); display: flex; }
-.cs-media .photo { flex: 1; min-height: 260px; overflow: hidden; border: 1px solid var(--border-soft); border-radius: var(--radius); }
-.cs-media .photo img { object-position: var(--focal, center top); }
+/* media column: a filled wash panel with the image matted inside at its
+   native 2:3 — the frame scales, the image is never cropped */
+.cs-media {
+  margin: 0; padding: var(--sp-5) var(--sp-6);
+  border-inline-end: 1px solid var(--border-soft);
+  background: var(--accent-soft);
+  display: flex; align-items: center; justify-content: center;
+  min-height: 300px;
+}
+.cs-media .photo {
+  aspect-ratio: 2 / 3; width: 100%; max-height: 100%;
+  overflow: hidden; border: 1px solid var(--border-soft); border-radius: var(--radius);
+  background: var(--surface-raised);
+}
 .cs-list .cs-sheet:nth-child(1) { --focal: left top; }    /* Aleppo — website hero, logo/headline left */
 .cs-list .cs-sheet:nth-child(2) { --focal: center top; }  /* Escape — poster */
 .cs-list .cs-sheet:nth-child(3) { --focal: center center; } /* KPI — laptop */
@@ -487,9 +498,8 @@ a:hover { color: var(--accent-text-hover); }
   .xp-insight { grid-column: 1; }
 
   .cs-body { grid-template-columns: 1fr; }
-  .cs-media { border-inline-end: none; border-bottom: 1px solid var(--border-soft); padding: var(--sp-5); display: block; }
-  .cs-media .photo { min-height: 0; aspect-ratio: 3 / 4; max-height: 60vh; }
-  .cs-media .photo img { object-position: center; }
+  .cs-media { border-inline-end: none; border-bottom: 1px solid var(--border-soft); padding: var(--sp-5); min-height: 0; }
+  .cs-media .photo { width: auto; height: 64vh; max-height: 480px; max-width: 100%; }
   .cs-row { grid-template-columns: 1fr; row-gap: var(--sp-1); padding-inline: var(--sp-5); }
 
   .belief-grid { grid-template-columns: 1fr; }
